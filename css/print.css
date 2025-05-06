@@ -1,0 +1,108 @@
+/* Print Styles */
+@media print {
+    /* Hide unnecessary elements */
+    .loading-overlay,
+    .sidebar-toggle,
+    .sidebar,
+    .back-to-top,
+    .nav-icon,
+    .status-dot,
+    .download-cv-btn {
+        display: none !important;
+    }
+
+    /* Reset layout */
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    .main-content-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .main-content {
+        max-width: 100% !important;
+        padding: 1cm !important;
+    }
+
+    /* Improve typography for print */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    p, li {
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* Add page breaks */
+    section {
+        page-break-before: auto;
+        page-break-after: auto;
+        page-break-inside: avoid;
+    }
+
+    /* Improve links */
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 90%;
+    }
+
+    /* Improve images */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Improve cards and grids */
+    .work-grid,
+    .game-grid {
+        display: block !important;
+    }
+
+    .work-item,
+    .game-card {
+        break-inside: avoid;
+        margin-bottom: 1cm;
+        padding: 0.5cm;
+        border: 1px solid #ccc;
+    }
+
+    /* Add page numbers */
+    @page {
+        margin: 2cm;
+        @bottom-right {
+            content: counter(page);
+        }
+    }
+
+    /* Add URL and date to footer */
+    @page :right {
+        @bottom-right {
+            content: "Printed from " url() " on " string(date);
+        }
+    }
+
+    /* Improve skills display */
+    .skills-container {
+        display: block !important;
+    }
+
+    .skill-tag {
+        display: inline-block;
+        margin: 0.2cm;
+        padding: 0.2cm;
+        border: 1px solid #ccc;
+        background: none !important;
+    }
+} 
