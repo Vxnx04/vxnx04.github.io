@@ -1,6 +1,6 @@
 /* Print Styles */
 @media print {
-    /* Hide unnecessary elements */
+    /* Hide Interactive Elements */
     .loading-overlay,
     .sidebar-toggle,
     .sidebar,
@@ -11,7 +11,7 @@
         display: none !important;
     }
 
-    /* Reset layout */
+    /* Reset Base Styles */
     body {
         background: white !important;
         color: black !important;
@@ -19,6 +19,7 @@
         line-height: 1.5;
     }
 
+    /* Layout Adjustments */
     .main-content-wrapper {
         margin: 0 !important;
         padding: 0 !important;
@@ -29,7 +30,7 @@
         padding: 1cm !important;
     }
 
-    /* Improve typography for print */
+    /* Typography Improvements */
     h1, h2, h3, h4, h5, h6 {
         page-break-after: avoid;
         page-break-inside: avoid;
@@ -40,14 +41,14 @@
         widows: 3;
     }
 
-    /* Add page breaks */
+    /* Section Breaks */
     section {
         page-break-before: auto;
         page-break-after: auto;
         page-break-inside: avoid;
     }
 
-    /* Improve links */
+    /* Link Improvements */
     a {
         text-decoration: underline;
         color: #000;
@@ -58,13 +59,13 @@
         font-size: 90%;
     }
 
-    /* Improve images */
+    /* Image Optimizations */
     img {
         max-width: 100% !important;
         height: auto !important;
     }
 
-    /* Improve cards and grids */
+    /* Grid Layout Adjustments */
     .work-grid,
     .game-grid {
         display: block !important;
@@ -78,7 +79,7 @@
         border: 1px solid #ccc;
     }
 
-    /* Add page numbers */
+    /* Page Setup */
     @page {
         margin: 2cm;
         @bottom-right {
@@ -86,14 +87,13 @@
         }
     }
 
-    /* Add URL and date to footer */
     @page :right {
         @bottom-right {
             content: "Printed from " url() " on " string(date);
         }
     }
 
-    /* Improve skills display */
+    /* Skills Display */
     .skills-container {
         display: block !important;
     }

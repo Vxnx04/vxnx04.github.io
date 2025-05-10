@@ -169,27 +169,3 @@ window.addEventListener('error', (event) => {
     console.error('Unhandled error:', event.error);
     // You can add custom error handling here
 });
-
-// Add performance monitoring
-if (window.performance) {
-    window.addEventListener('load', () => {
-        try {
-            const perfData = window.performance.timing;
-            const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-            console.log(`Page load time: ${pageLoadTime}ms`);
-        } catch (error) {
-            console.error('Error in performance monitoring:', error);
-        }
-    });
-}
-
-// Add offline detection
-window.addEventListener('online', () => {
-    document.body.classList.remove('offline');
-    console.log('You are now online');
-});
-
-window.addEventListener('offline', () => {
-    document.body.classList.add('offline');
-    console.log('You are now offline');
-});

@@ -11,9 +11,9 @@ const urlsToCache = [
     '/images/icon-512x512.png',
     '/images/404-illustration.svg',
     '/images/500-illustration.svg',
-    '/games/game1.html',
-    '/games/game2.html',
-    '/games/game3.html',
+    '/games/dream-quizzz.html',
+    '/games/mysterious-restaurant.html',
+    '/games/memories.html',
     '/manifest.json'
 ];
 

@@ -1,3 +1,4 @@
+/* Game Header Styles */
 .game-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -20,29 +21,19 @@
     animation: headerGlow 2s infinite;
 }
 
-@keyframes headerGlow {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
-}
-
+/* Game Title Styles */
 .game-title {
     font-size: 3rem;
     margin-bottom: 1rem;
     background: linear-gradient(to right, var(--accent-color), var(--accent-color-light));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-shadow: 0 0 20px rgba(80, 77, 255, 0.3);
     animation: titleFloat 3s ease-in-out infinite;
 }
 
-@keyframes titleFloat {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
+/* Game Tags Styles */
 .game-tags {
     display: flex;
     gap: 1rem;
@@ -50,7 +41,8 @@
     margin-top: 1rem;
 }
 
-.platform-tag, .status-tag {
+.platform-tag,
+.status-tag {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -63,55 +55,13 @@
     animation: tagFloat 3s ease-in-out infinite;
 }
 
+/* Platform Tag Variants */
 .platform-tag {
     background: linear-gradient(135deg, rgba(80, 77, 255, 0.2), rgba(80, 77, 255, 0.1));
     border: 1px solid rgba(80, 77, 255, 0.3);
     color: var(--accent-color);
 }
 
-.status-tag {
-    background: linear-gradient(135deg, rgba(46, 204, 113, 0.2), rgba(46, 204, 113, 0.1));
-    border: 1px solid rgba(46, 204, 113, 0.3);
-    color: #2ecc71;
-}
-
-.tag-icon {
-    font-size: 1rem;
-    animation: iconPulse 2s infinite;
-}
-
-@keyframes tagFloat {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
-    100% { transform: translateY(0); }
-}
-
-@keyframes iconPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-/* Different status styles */
-.status-tag.released {
-    background: linear-gradient(135deg, rgba(46, 204, 113, 0.2), rgba(46, 204, 113, 0.1));
-    border: 1px solid rgba(46, 204, 113, 0.3);
-    color: #2ecc71;
-}
-
-.status-tag.in-development {
-    background: linear-gradient(135deg, rgba(241, 196, 15, 0.2), rgba(241, 196, 15, 0.1));
-    border: 1px solid rgba(241, 196, 15, 0.3);
-    color: #f1c40f;
-}
-
-.status-tag.coming-soon {
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(52, 152, 219, 0.1));
-    border: 1px solid rgba(52, 152, 219, 0.3);
-    color: #3498db;
-}
-
-/* Different platform styles */
 .platform-tag.mobile {
     background: linear-gradient(135deg, rgba(80, 77, 255, 0.2), rgba(80, 77, 255, 0.1));
     border: 1px solid rgba(80, 77, 255, 0.3);
@@ -130,6 +80,32 @@
     color: #e74c3c;
 }
 
+/* Status Tag Variants */
+.status-tag {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.2), rgba(46, 204, 113, 0.1));
+    border: 1px solid rgba(46, 204, 113, 0.3);
+    color: #2ecc71;
+}
+
+.status-tag.released {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.2), rgba(46, 204, 113, 0.1));
+    border: 1px solid rgba(46, 204, 113, 0.3);
+    color: #2ecc71;
+}
+
+.status-tag.in-development {
+    background: linear-gradient(135deg, rgba(241, 196, 15, 0.2), rgba(241, 196, 15, 0.1));
+    border: 1px solid rgba(241, 196, 15, 0.3);
+    color: #f1c40f;
+}
+
+.status-tag.coming-soon {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(52, 152, 219, 0.1));
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    color: #3498db;
+}
+
+/* Game Video Styles */
 .game-video {
     width: 100%;
     max-width: 800px;
@@ -163,6 +139,7 @@
     border: none;
 }
 
+/* Play Button Styles */
 .play-game-container {
     text-align: center;
     margin-bottom: 3rem;
@@ -217,6 +194,7 @@
     100% { transform: scale(1); }
 }
 
+/* Game Description Styles */
 .game-description {
     margin-bottom: 3rem;
     line-height: 1.8;
@@ -256,6 +234,7 @@
     left: 0;
 }
 
+/* Game Details Styles */
 .game-details {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -288,83 +267,32 @@
     background: var(--gradient-primary);
 }
 
-.detail-card h3 {
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-    font-family: var(--game-font);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    display: inline-block;
+/* Animations */
+@keyframes headerGlow {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
 }
 
-.detail-card h3::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background: var(--gradient-primary);
+@keyframes titleFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
 
-.detail-card ul {
-    list-style: none;
-    padding: 0;
+@keyframes tagFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
 }
 
-.detail-card li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
-    transition: transform 0.3s ease;
+@keyframes iconPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
-.detail-card li:hover {
-    transform: translateX(5px);
-}
-
-.detail-card li::before {
-    content: '🎮';
-    position: absolute;
-    left: 0;
-    opacity: 0.7;
-}
-
-.back-to-games {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: var(--gradient-primary);
-    color: white;
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    margin-top: 2rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(80, 77, 255, 0.3);
-}
-
-.back-to-games::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-}
-
-.back-to-games:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(80, 77, 255, 0.4);
-}
-
-.back-to-games:hover::before {
-    left: 100%;
-}
-
+/* Media Queries */
 @media (max-width: 768px) {
     .game-tags {
         flex-direction: column;
@@ -377,11 +305,6 @@
 
     .game-video {
         margin: 0 auto 2rem;
-    }
-
-    .play-game-btn {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
     }
 
     .game-details {

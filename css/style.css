@@ -1,30 +1,42 @@
+/* CSS Variables */
 :root {
+    /* Colors */
     --bg-color: #020202;
     --text-color: #c5c5c5;
     --accent-color: #504dff;
     --accent-color-light: #6e6bff;
     --secondary-bg: #1a1a1a;
     --card-bg: #15151f;
+    
+    /* Layout */
     --sidebar-width: 280px;
     --content-max-width: 800px;
     --transition-speed: 0.3s;
     --border-radius: 12px;
+    
+    /* Effects */
     --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     --gradient-primary: linear-gradient(135deg, #504dff 0%, #6e6bff 100%);
     --gradient-secondary: linear-gradient(135deg, rgba(80, 77, 255, 0.1) 0%, rgba(110, 107, 255, 0.1) 100%);
     --glass-bg: rgba(26, 26, 26, 0.8);
     --glass-border: rgba(255, 255, 255, 0.1);
     --pixel-border: 2px solid #504dff;
+    
+    /* Typography */
     --retro-text: 'Press Start 2P', cursive;
     --game-font: 'VT323', monospace;
     --pixel-size: 2px;
+    
+    /* UI Elements */
     --health-bar: #ff3e3e;
     --mana-bar: #3e3eff;
     --exp-bar: #3eff3e;
 }
 
+/* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
 
+/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -32,6 +44,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Base Layout */
 body {
     display: flex;
     background-color: var(--bg-color);
@@ -46,7 +59,7 @@ body {
     background-attachment: fixed;
 }
 
-/* Stylized scrollbar */
+/* Scrollbar Styles */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -64,6 +77,23 @@ body {
     background: #444;
 }
 
+/* Layout Components */
+.main-content-wrapper {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    display: flex;
+    justify-content: center;
+    transition: margin var(--transition-speed);
+}
+
+.main-content {
+    width: 100%;
+    max-width: var(--content-max-width);
+    padding: 3rem 2rem;
+    overflow-y: auto;
+}
+
+/* Sidebar Styles */
 .sidebar {
     width: var(--sidebar-width);
     background-color: var(--glass-bg);
@@ -97,21 +127,6 @@ body {
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.main-content-wrapper {
-    flex: 1;
-    margin-left: var(--sidebar-width);
-    display: flex;
-    justify-content: center;
-    transition: margin var(--transition-speed);
-}
-
-.main-content {
-    width: 100%;
-    max-width: var(--content-max-width);
-    padding: 3rem 2rem;
-    overflow-y: auto;
 }
 
 .profile {
@@ -787,7 +802,7 @@ body {
     100% { transform: translateY(-3px); }
 }
 
-/* For smaller screens */
+/* Media Queries */
 @media (max-width: 768px) {
     :root {
         --sidebar-width: 0px;
@@ -820,7 +835,8 @@ body {
         padding: 1.5rem;
     }
     
-    .work-grid, .game-grid {
+    .work-grid, 
+    .game-grid {
         grid-template-columns: 1fr;
     }
     
@@ -837,22 +853,22 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-color);
+    right: 0;
+    bottom: 0;
+    background: var(--bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.5s, visibility 0.5s;
+    transition: opacity 0.5s ease;
 }
 
 .loading-spinner {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--accent-color);
+    border-top-color: transparent;
     border-radius: 50%;
-    border: 3px solid transparent;
-    border-top-color: var(--accent-color);
     animation: spin 1s linear infinite;
 }
 
@@ -862,13 +878,28 @@ body {
 
 .fade-out {
     opacity: 0;
-    visibility: hidden;
 }
 
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+@media print {
+    .loading-overlay,
+    .sidebar,
+    .sidebar-toggle,
+    .back-to-top {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .main-content-wrapper {
+        margin-left: 0;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
 }
 
 .download-cv-btn {
@@ -918,30 +949,4 @@ body {
 .download-cv-btn .nav-icon {
     margin-right: 0.5rem;
     font-size: 1rem;
-}
-
-/* Add offline styles */
-body.offline {
-    position: relative;
-}
-
-body.offline::before {
-    content: "You are currently offline. Some features may be limited.";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #ff3e3e;
-    color: white;
-    padding: 0.5rem;
-    text-align: center;
-    z-index: 1000;
-    font-size: 0.9rem;
-}
-
-/* Add print styles */
-@media print {
-    body.offline::before {
-        display: none;
-    }
 }
