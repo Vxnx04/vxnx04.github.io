@@ -678,29 +678,39 @@ body {
 }
 
 .social-links {
-    margin-top: auto;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-top: 1.5rem;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-links a {
     display: flex;
     align-items: center;
-    text-decoration: none;
-    color: var(--text-color);
-    padding: 0.5rem;
-    border-radius: var(--border-radius);
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
-    font-size: 0.9rem;
 }
 
 .social-links a:hover {
-    background-color: rgba(80, 77, 255, 0.1);
-    transform: translateX(3px);
-    color: var(--accent-color-light);
+    transform: translateY(-3px);
+    background: var(--accent-color);
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover .social-icon {
+    transform: scale(1.1);
 }
 
 .back-to-top {
@@ -949,4 +959,39 @@ body {
 .download-cv-btn .nav-icon {
     margin-right: 0.5rem;
     font-size: 1rem;
+}
+
+.highlight-name {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(80, 77, 255, 0.3);
+    font-family: var(--game-font);
+    letter-spacing: 1px;
+}
+
+.highlight-skill {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.highlight-text {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.highlight-company {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.highlight-game {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-family: var(--game-font);
+    letter-spacing: 0.5px;
+}
+
+.highlight-game::before {
+    content: '🎮';
+    margin-right: 4px;
+    font-size: 0.9em;
 }
