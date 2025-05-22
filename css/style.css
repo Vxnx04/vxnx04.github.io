@@ -1,12 +1,12 @@
 /* CSS Variables */
 :root {
     /* Colors */
-    --bg-color: #020202;
-    --text-color: #c5c5c5;
-    --accent-color: #504dff;
-    --accent-color-light: #6e6bff;
-    --secondary-bg: #1a1a1a;
-    --card-bg: #15151f;
+    --bg-color: #080A12;
+    --text-color: #A3BFD9;
+    --accent-color: #43D9BD;
+    --accent-color-light: #3DD9AD;
+    --secondary-bg: #6D7BA6;
+    --card-bg: #0F111A;
     
     /* Layout */
     --sidebar-width: 280px;
@@ -15,12 +15,12 @@
     --border-radius: 12px;
     
     /* Effects */
-    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    --gradient-primary: linear-gradient(135deg, #504dff 0%, #6e6bff 100%);
-    --gradient-secondary: linear-gradient(135deg, rgba(80, 77, 255, 0.1) 0%, rgba(110, 107, 255, 0.1) 100%);
-    --glass-bg: rgba(26, 26, 26, 0.8);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --pixel-border: 2px solid #504dff;
+    --box-shadow: 0 4px 20px rgba(67, 217, 189, 0.2);
+    --gradient-primary: linear-gradient(135deg, #43D9BD 0%, #3DD9AD 100%);
+    --gradient-secondary: linear-gradient(135deg, rgba(67, 217, 189, 0.15) 0%, rgba(61, 217, 173, 0.15) 100%);
+    --glass-bg: rgba(15, 17, 26, 0.95);
+    --glass-border: rgba(163, 191, 217, 0.1);
+    --pixel-border: 2px solid #43D9BD;
     
     /* Typography */
     --retro-text: 'Press Start 2P', cursive;
@@ -28,9 +28,9 @@
     --pixel-size: 2px;
     
     /* UI Elements */
-    --health-bar: #ff3e3e;
-    --mana-bar: #3e3eff;
-    --exp-bar: #3eff3e;
+    --health-bar: #43D9BD;
+    --mana-bar: #3DD9AD;
+    --exp-bar: #6D7BA6;
 }
 
 /* Import Fonts */
@@ -52,10 +52,19 @@ body {
     min-height: 100vh;
     line-height: 1.6;
     background-image: 
-        radial-gradient(circle at 10% 20%, rgba(80, 77, 255, 0.05) 0%, rgba(0, 0, 0, 0) 80%),
-        radial-gradient(circle at 90% 80%, rgba(80, 77, 255, 0.05) 0%, rgba(0, 0, 0, 0) 80%),
-        repeating-linear-gradient(0deg, rgba(80, 77, 255, 0.03) 0px, rgba(80, 77, 255, 0.03) 1px, transparent 1px, transparent 2px),
-        url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23504dff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+        radial-gradient(circle at 10% 20%, rgba(67, 217, 189, 0.02) 0%, rgba(0, 0, 0, 0) 80%),
+        radial-gradient(circle at 90% 80%, rgba(67, 217, 189, 0.02) 0%, rgba(0, 0, 0, 0) 80%),
+        linear-gradient(45deg, 
+            rgba(67, 217, 189, 0.01) 25%, 
+            transparent 25%, 
+            transparent 50%, 
+            rgba(67, 217, 189, 0.01) 50%, 
+            rgba(67, 217, 189, 0.01) 75%, 
+            transparent 75%, 
+            transparent
+        );
+    background-size: 100% 100%, 100% 100%, 60px 60px;
+    background-position: 0 0, 0 0, 0 0;
     background-attachment: fixed;
 }
 
@@ -65,16 +74,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #111;
+    background: var(--card-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #333;
+    background: var(--secondary-bg);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #444;
+    background: var(--accent-color);
 }
 
 /* Layout Components */
@@ -185,7 +194,7 @@ body {
 
 .profile-subtitle {
     font-size: 0.9rem;
-    color: #ccc;
+    color: var(--secondary-bg);
     margin-top: 0.2rem;
     margin-bottom: 0.8rem;
 }
@@ -193,7 +202,7 @@ body {
 .status-indicator {
     display: inline-flex;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--card-bg);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -210,11 +219,11 @@ body {
 .status-dot {
     width: 8px;
     height: 8px;
-    background-color: #4caf50;
+    background-color: var(--accent-color);
     border-radius: 50%;
     margin-right: 8px;
     animation: statusPulse 2s infinite;
-    box-shadow: 0 0 10px #4caf50;
+    box-shadow: 0 0 10px var(--accent-color);
 }
 
 @keyframes statusPulse {
@@ -247,7 +256,7 @@ body {
 .nav-title {
     font-size: 0.7rem;
     text-transform: uppercase;
-    color: #888;
+    color: var(--secondary-bg);
     margin-bottom: 0.6rem;
     letter-spacing: 1px;
 }
@@ -290,7 +299,8 @@ body {
 
 .nav-links a:hover {
     transform: translateX(3px);
-    color: var(--accent-color-light);
+    color: var(--accent-color);
+    background: var(--gradient-secondary);
 }
 
 .nav-links a:hover::before {
@@ -323,7 +333,7 @@ body {
 }
 
 .section:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(67, 217, 189, 0.15);
 }
 
 .section-title {
@@ -463,7 +473,7 @@ body {
 }
 
 .work-date {
-    color: #888;
+    color: var(--secondary-bg);
     font-size: 0.85rem;
     margin-top: auto;
     padding-top: 0.8rem;
@@ -534,7 +544,7 @@ body {
 
 .game-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(80, 77, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(67, 217, 189, 0.2);
     animation: gameCardPulse 1.5s infinite;
 }
 
@@ -551,7 +561,7 @@ body {
     max-height: 216px;
     object-fit: cover;
     display: block;
-    background-color: rgba(80, 77, 255, 0.1);
+    background-color: var(--card-bg);
     border-bottom: 2px solid var(--accent-color);
 }
 
@@ -590,7 +600,7 @@ body {
 
 .game-desc {
     font-size: 0.9rem;
-    color: #aaa;
+    color: var(--secondary-bg);
     margin-bottom: 1rem;
     line-height: 1.5;
     position: relative;
@@ -624,7 +634,7 @@ body {
     letter-spacing: 1px;
     border: var(--pixel-border);
     box-shadow: 
-        0 0 0 1px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(0, 0, 0, 0.2),
         0 0 0 2px var(--accent-color);
 }
 
@@ -667,7 +677,7 @@ body {
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(80, 77, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(67, 217, 189, 0.2);
     animation: btnPulse 1s infinite;
 }
 
@@ -693,7 +703,7 @@ body {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--card-bg);
     transition: all 0.3s ease;
 }
 
@@ -729,7 +739,7 @@ body {
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(100px);
-    box-shadow: 0 5px 15px rgba(80, 77, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(67, 217, 189, 0.2);
 }
 
 .back-to-top.visible {
@@ -739,7 +749,7 @@ body {
 
 .back-to-top:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(80, 77, 255, 0.4);
+    box-shadow: 0 10px 25px rgba(67, 217, 189, 0.3);
 }
 
 .skills-container {
@@ -802,7 +812,7 @@ body {
 .skill-tag:hover {
     background: var(--gradient-primary);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(80, 77, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(67, 217, 189, 0.2);
     animation: skillTagPulse 1s infinite;
 }
 
@@ -928,7 +938,7 @@ body {
     letter-spacing: 1px;
     border: var(--pixel-border);
     box-shadow: 
-        0 0 0 1px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(0, 0, 0, 0.2),
         0 0 0 2px var(--accent-color);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -952,7 +962,7 @@ body {
 
 .download-cv-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(80, 77, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(67, 217, 189, 0.2);
     animation: btnPulse 1s infinite;
 }
 
@@ -963,7 +973,7 @@ body {
 
 .highlight-name {
     color: var(--accent-color);
-    text-shadow: 0 0 10px rgba(80, 77, 255, 0.3);
+    text-shadow: 0 0 10px rgba(67, 217, 189, 0.3);
     font-family: var(--game-font);
     letter-spacing: 1px;
 }

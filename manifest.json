@@ -4,8 +4,8 @@
     "description": "Professional portfolio of Vinicius Passos - Game Designer & Unity Developer",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#020202",
-    "theme_color": "#504dff",
+    "background_color": "#151826",
+    "theme_color": "#43D9BD",
     "orientation": "portrait",
     "icons": [
         {

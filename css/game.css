@@ -237,19 +237,22 @@
 /* Game Details Styles */
 .game-details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
+    align-items: start;
+    justify-items: center;
 }
 
 .detail-card {
     background: var(--glass-bg);
-    padding: 2rem;
+    padding: 2rem 2rem 2.5rem 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+    max-width: 420px;
 }
 
 .detail-card:hover {
@@ -265,6 +268,22 @@
     width: 100%;
     height: 4px;
     background: var(--gradient-primary);
+}
+
+.detail-card h3 {
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+.detail-card ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.7rem;
 }
 
 /* Animations */
@@ -309,6 +328,10 @@
 
     .game-details {
         grid-template-columns: 1fr;
+        justify-items: stretch;
+    }
+    .detail-card {
+        max-width: 100%;
     }
 }
 
@@ -325,4 +348,231 @@ body::before {
         radial-gradient(circle at 90% 80%, rgba(80, 77, 255, 0.05) 0%, transparent 80%);
     pointer-events: none;
     z-index: -1;
+}
+
+/* Game Hero Section */
+.game-hero {
+    margin-bottom: 4rem;
+}
+
+/* Game Overview Section */
+.game-overview {
+    margin-bottom: 4rem;
+}
+
+/* Game Features */
+.game-features {
+    margin-top: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: var(--glass-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(80, 77, 255, 0.2);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+.feature-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.feature-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Development Details Section */
+.development-details {
+    margin-bottom: 4rem;
+}
+
+.development-experience {
+    margin-top: 3rem;
+    background: var(--glass-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.experience-content {
+    margin-top: 2rem;
+}
+
+.experience-intro {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.experience-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.highlight-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-3px);
+}
+
+.highlight-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.highlight-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navigation Links */
+.navigation-links {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-to-games {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.back-to-games:hover {
+    color: var(--accent-color-light);
+}
+
+/* Animations */
+@keyframes iconFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .highlight-card {
+        padding: 1.2rem;
+    }
+}
+
+.game-details.grid-areas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "role role"
+        "resp tech";
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: start;
+    justify-items: stretch;
+}
+.role-card {
+    grid-area: role;
+    max-width: 100%;
+}
+.resp-card {
+    grid-area: resp;
+}
+.tech-card {
+    grid-area: tech;
+}
+
+@media (max-width: 900px) {
+    .game-details.grid-areas {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "role"
+            "resp"
+            "tech";
+    }
+    .role-card, .resp-card, .tech-card {
+        max-width: 100%;
+    }
+}
+
+.game-info-section {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: var(--glass-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.game-info-section h2 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.game-info-section ul {
+    margin: 0 0 0 1.2rem;
+    padding: 0;
+    list-style: disc inside;
+    line-height: 1.8;
+}
+
+.game-info-section p {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .game-info-section {
+        padding: 1.2rem;
+    }
+    .game-info-section h2 {
+        font-size: 1.2rem;
+    }
 } 
