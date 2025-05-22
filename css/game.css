@@ -8,6 +8,7 @@
     position: relative;
     overflow: hidden;
     box-shadow: var(--box-shadow);
+    backdrop-filter: blur(10px);
 }
 
 .game-header::before {
@@ -23,14 +24,17 @@
 
 /* Game Title Styles */
 .game-title {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(to right, var(--accent-color), var(--accent-color-light));
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-color-light));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(80, 77, 255, 0.3);
+    text-shadow: 0 0 30px rgba(80, 77, 255, 0.4);
     animation: titleFloat 3s ease-in-out infinite;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 
 /* Game Tags Styles */
@@ -197,62 +201,87 @@
 /* Game Description Styles */
 .game-description {
     margin-bottom: 3rem;
-    line-height: 1.8;
+    line-height: 2;
     background: var(--glass-bg);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    backdrop-filter: blur(10px);
 }
 
 .game-description h2 {
     color: var(--accent-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-family: var(--game-font);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 1rem;
 }
 
-.game-description h3 {
-    color: var(--accent-color-light);
-    margin: 1.5rem 0 1rem;
+.game-description h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.game-description p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .game-description ul {
     list-style: none;
     padding: 0;
+    margin: 1.5rem 0;
 }
 
 .game-description li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
     position: relative;
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
 .game-description li::before {
     content: '✨';
     position: absolute;
     left: 0;
+    top: 0;
+    animation: iconFloat 2s ease-in-out infinite;
 }
 
 /* Game Details Styles */
 .game-details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
     align-items: start;
     justify-items: center;
+    padding: 0 1rem;
 }
 
 .detail-card {
     background: var(--glass-bg);
-    padding: 2rem 2rem 2.5rem 2rem;
+    padding: 2.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
-    max-width: 420px;
+    width: 100%;
+    max-width: 450px;
 }
 
 .detail-card:hover {
@@ -294,9 +323,8 @@
 }
 
 @keyframes titleFloat {
-    0% { transform: translateY(0); }
+    0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
 }
 
 @keyframes tagFloat {
@@ -305,10 +333,9 @@
     100% { transform: translateY(0); }
 }
 
-@keyframes iconPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-5px) rotate(10deg); }
 }
 
 /* Media Queries */
@@ -328,10 +355,20 @@
 
     .game-details {
         grid-template-columns: 1fr;
-        justify-items: stretch;
+        gap: 2rem;
+        padding: 0;
     }
     .detail-card {
+        padding: 2rem;
         max-width: 100%;
+    }
+
+    .game-description {
+        padding: 1.5rem;
+    }
+    
+    .game-description h2 {
+        font-size: 1.8rem;
     }
 }
 
@@ -367,18 +404,20 @@ body::before {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+    padding: 0 1rem;
 }
 
 .feature-card {
     background: var(--glass-bg);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
 }
 
 .feature-card:hover {
@@ -429,16 +468,18 @@ body::before {
 
 .experience-highlights {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    padding: 0 1rem;
 }
 
 .highlight-card {
     background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: var(--border-radius);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease;
+    width: 100%;
 }
 
 .highlight-card:hover {
@@ -478,29 +519,90 @@ body::before {
     color: var(--accent-color-light);
 }
 
-/* Animations */
-@keyframes iconFloat {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+/* Game Info Section Styles */
+.game-info-section {
+    background: var(--glass-bg);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.game-info-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.game-info-section h2 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.game-info-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.game-info-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.game-info-section li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.game-info-section li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.game-info-section li:hover::before {
+    transform: translateX(5px);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .features-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0;
     }
 
     .experience-highlights {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0;
     }
 
-    .feature-card {
-        padding: 1.5rem;
-    }
-
+    .detail-card,
+    .feature-card,
     .highlight-card {
-        padding: 1.2rem;
+        padding: 2rem;
+        max-width: 100%;
     }
 }
 
@@ -536,43 +638,5 @@ body::before {
     }
     .role-card, .resp-card, .tech-card {
         max-width: 100%;
-    }
-}
-
-.game-info-section {
-    margin-bottom: 2.5rem;
-    padding: 2rem;
-    background: var(--glass-bg);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-.game-info-section h2 {
-    font-size: 1.5rem;
-    color: var(--accent-color);
-    margin-bottom: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.game-info-section ul {
-    margin: 0 0 0 1.2rem;
-    padding: 0;
-    list-style: disc inside;
-    line-height: 1.8;
-}
-
-.game-info-section p {
-    margin-bottom: 1rem;
-    color: var(--text-color);
-    line-height: 1.7;
-}
-
-@media (max-width: 768px) {
-    .game-info-section {
-        padding: 1.2rem;
-    }
-    .game-info-section h2 {
-        font-size: 1.2rem;
     }
 } 
