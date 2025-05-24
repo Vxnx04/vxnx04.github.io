@@ -23,8 +23,7 @@
     --pixel-border: 2px solid #43D9BD;
     
     /* Typography */
-    --retro-text: 'Press Start 2P', cursive;
-    --game-font: 'VT323', monospace;
+    --main-font: 'JetBrains Mono', monospace;
     --pixel-size: 2px;
     
     /* UI Elements */
@@ -34,14 +33,15 @@
 }
 
 /* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 /* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--main-font);
+    line-height: 1.8;
 }
 
 /* Base Layout */
@@ -51,6 +51,7 @@ body {
     color: var(--text-color);
     min-height: 100vh;
     line-height: 1.6;
+    font-size: 0.9rem;
     background-image: 
         radial-gradient(circle at 10% 20%, rgba(67, 217, 189, 0.02) 0%, rgba(0, 0, 0, 0) 80%),
         radial-gradient(circle at 90% 80%, rgba(67, 217, 189, 0.02) 0%, rgba(0, 0, 0, 0) 80%),
@@ -162,15 +163,15 @@ body {
 
 .profile-title {
     margin-top: 0.8rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     background: linear-gradient(to right, #c5c5c5, var(--accent-color-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-family: var(--game-font);
+    font-family: var(--main-font);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     position: relative;
     display: inline-block;
 }
@@ -208,7 +209,7 @@ body {
     font-size: 0.85rem;
     margin-top: 0.5rem;
     border: var(--pixel-border);
-    font-family: var(--game-font);
+    font-family: var(--main-font);
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
@@ -279,8 +280,8 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    font-family: var(--game-font);
-    font-size: 1rem;
+    font-family: var(--main-font);
+    font-size: 0.85rem;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
     padding-left: 35px;
 }
@@ -291,7 +292,7 @@ body {
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    font-family: var(--game-font);
+    font-family: var(--main-font);
     color: var(--accent-color);
     opacity: 0.5;
     transition: all 0.3s ease;
@@ -310,7 +311,7 @@ body {
 
 .nav-icon {
     margin-right: 0.6rem;
-    font-size: 1rem;
+    font-size: 0.85rem;
 }
 
 .section {
@@ -339,13 +340,13 @@ body {
 .section-title {
     color: var(--accent-color);
     margin-bottom: 2rem;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     font-weight: 600;
     display: inline-block;
     position: relative;
-    font-family: var(--game-font);
+    font-family: var(--main-font);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .section-title::after {
@@ -386,7 +387,7 @@ body {
 .intro {
     margin-bottom: 3rem;
     line-height: 1.7;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
 }
 
 .intro p {
@@ -463,12 +464,12 @@ body {
 .work-company {
     font-weight: 600;
     margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
 }
 
 .work-position {
     color: var(--accent-color);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     margin-bottom: 0.5rem;
 }
 
@@ -532,7 +533,7 @@ body {
     color: rgb(255, 255, 255);
     padding: 5px 30px;
     transform: rotate(45deg);
-    font-family: var(--game-font);
+    font-family: var(--main-font);
     font-size: 0.8rem;
     text-transform: uppercase;
     z-index: 1;
@@ -586,10 +587,10 @@ body {
 }
 
 .game-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
     color: #fff;
-    font-family: var(--game-font);
+    font-family: var(--main-font);
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
@@ -614,7 +615,7 @@ body {
 }
 
 .game-desc {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--secondary-bg);
     margin-bottom: 1rem;
     line-height: 1.5;
@@ -643,8 +644,8 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    font-family: var(--game-font);
-    font-size: 0.9rem;
+    font-family: var(--main-font);
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     border: var(--pixel-border);
@@ -782,9 +783,9 @@ body {
     border: var(--pixel-border);
     border-radius: var(--border-radius);
     margin: 0.3rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
-    font-family: var(--game-font);
+    font-family: var(--main-font);
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
@@ -947,8 +948,8 @@ body {
     padding: 0.3rem 0.8rem;
     border-radius: var(--border-radius);
     margin-top: 1rem;
-    font-family: var(--game-font);
-    font-size: 0.9rem;
+    font-family: var(--main-font);
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     border: var(--pixel-border);
@@ -989,7 +990,7 @@ body {
 .highlight-name {
     color: var(--accent-color);
     text-shadow: 0 0 10px rgba(67, 217, 189, 0.3);
-    font-family: var(--game-font);
+    font-family: var(--main-font);
     letter-spacing: 1px;
 }
 
@@ -1011,7 +1012,7 @@ body {
 .highlight-game {
     color: var(--accent-color);
     font-weight: 600;
-    font-family: var(--game-font);
+    font-family: var(--main-font);
     letter-spacing: 0.5px;
 }
 
