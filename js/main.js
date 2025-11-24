@@ -1,171 +1,124 @@
-// Modern JavaScript with error handling and performance optimizations
-
-// Service Worker Registration
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/js/service-worker.js')
-            .then(registration => {
-                console.log('ServiceWorker registration successful');
-            })
-            .catch(err => {
-                console.log('ServiceWorker registration failed: ', err);
-            });
-    });
-}
-
-// Loading screen animation
 document.addEventListener('DOMContentLoaded', () => {
-    try {
-        const loadingOverlay = document.querySelector('.loading-overlay');
-        if (loadingOverlay) {
-            setTimeout(() => {
-                loadingOverlay.classList.add('fade-out');
-                // Remove from DOM after animation
-                setTimeout(() => {
-                    loadingOverlay.remove();
-                }, 500);
-            }, 500);
-        }
-    } catch (error) {
-        console.error('Error in loading screen animation:', error);
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            
+            // Animate hamburger icon
+            const spans = mobileMenuBtn.querySelectorAll('span');
+            if (navMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
     }
-});
 
-// Mobile sidebar toggle with improved accessibility
-const sidebarToggle = document.getElementById('sidebar-toggle');
-const sidebar = document.getElementById('sidebar');
-
-if (sidebarToggle && sidebar) {
-    sidebarToggle.addEventListener('click', () => {
-        try {
-            const isExpanded = sidebarToggle.getAttribute('aria-expanded') === 'true';
-            sidebar.classList.toggle('active');
-            sidebarToggle.setAttribute('aria-expanded', !isExpanded);
-        } catch (error) {
-            console.error('Error in sidebar toggle:', error);
-        }
+    // Close mobile menu when clicking a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            
+            // Reset hamburger icon
+            const spans = mobileMenuBtn.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        });
     });
-}
 
-// Smooth scrolling with improved performance
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        try {
-            e.preventDefault();
-            
-            // Close mobile sidebar if open
-            if (sidebar && sidebar.classList.contains('active')) {
-                sidebar.classList.remove('active');
-                sidebarToggle.setAttribute('aria-expanded', 'false');
-            }
-            
-            const targetId = this.getAttribute('href');
-            const target = document.querySelector(targetId);
-            
-            if (target) {
-                // Use requestAnimationFrame for smooth animation
-                requestAnimationFrame(() => {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                });
-            }
-        } catch (error) {
-            console.error('Error in smooth scrolling:', error);
-        }
-    });
-});
-
-// Back to top button with improved performance
-const backToTop = document.getElementById('backToTop');
-let scrollTimeout;
-
-if (backToTop) {
+    // Active Navigation Highlight on Scroll
+    const sections = document.querySelectorAll('section');
+    
     window.addEventListener('scroll', () => {
-        try {
-            // Clear previous timeout
-            clearTimeout(scrollTimeout);
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
             
-            // Set new timeout
-            scrollTimeout = setTimeout(() => {
-                if (window.pageYOffset > 300) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
-            }, 100); // Debounce scroll events
-        } catch (error) {
-            console.error('Error in back to top button:', error);
-        }
-    });
-
-    backToTop.addEventListener('click', (e) => {
-        try {
-            e.preventDefault();
-            requestAnimationFrame(() => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        } catch (error) {
-            console.error('Error in back to top click:', error);
-        }
-    });
-}
-
-// Lazy loading for images
-document.addEventListener('DOMContentLoaded', () => {
-    try {
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        
-        if ('loading' in HTMLImageElement.prototype) {
-            // Browser supports native lazy loading
-            // No need to do anything as the browser handles it
-        } else {
-            // Fallback for browsers that don't support lazy loading
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        // Force image to load
-                        img.src = img.src;
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            images.forEach(img => imageObserver.observe(img));
-        }
-    } catch (error) {
-        console.error('Error in lazy loading:', error);
-    }
-});
-
-// Add keyboard navigation support
-document.addEventListener('keydown', (e) => {
-    try {
-        // Skip to main content
-        if (e.key === 's' && e.ctrlKey) {
-            const mainContent = document.querySelector('main');
-            if (mainContent) {
-                mainContent.focus();
+            if (scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
             }
-        }
-        
-        // Close sidebar with Escape key
-        if (e.key === 'Escape' && sidebar && sidebar.classList.contains('active')) {
-            sidebar.classList.remove('active');
-            sidebarToggle.setAttribute('aria-expanded', 'false');
-        }
-    } catch (error) {
-        console.error('Error in keyboard navigation:', error);
-    }
-});
+        });
 
-// Add error boundary for dynamic content
-window.addEventListener('error', (event) => {
-    console.error('Unhandled error:', event.error);
-    // You can add custom error handling here
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Glitch Effect Randomization for Hero Title
+    const glitchText = document.querySelector('.glitch');
+    if (glitchText) {
+        setInterval(() => {
+            const skew = Math.random() * 20 - 10;
+            glitchText.style.setProperty('--skew', `${skew}deg`);
+        }, 2000);
+    }
+
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+    // Intersection Observer for Fade-in Animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.section-title, .about-text, .skill-category, .timeline-item, .project-card, .contact-content').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(el);
+    });
+
+    // Add class for animation
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .fade-in-up {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    `;
+    document.head.appendChild(style);
 });
