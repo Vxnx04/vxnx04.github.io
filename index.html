@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Game Designer & Unity Developer portfolio showcasing games and professional experience">
-    <meta name="keywords" content="game designer, unity developer, game development, portfolio, vinicius passos">
-    <meta property="og:title" content="Game Designer | Vinicius Passos">
+        content="Game Designer & Unity Developer especialista em jogos mobile. 40% retenção D1. Desenvolvo experiências imersivas em Unity para iOS, Android e PC.">
+    <meta name="keywords" content="game designer, unity developer, game development, portfolio, vinicius passos, mobile games, retenção D1">
+    <meta property="og:title" content="Vinicius Passos | Game Designer & Unity Developer">
     <meta property="og:description"
-        content="Professional portfolio of Vinicius Passos - Game Designer & Unity Developer">
+        content="Game Designer & Unity Developer especialista em jogos mobile. 40% retenção D1. Disponível para novas oportunidades.">
     <meta property="og:image" content="images/profile.png">
     <meta property="og:url" content="https://vxnx04.github.io">
     <meta name="theme-color" content="#0a0a0a">
@@ -24,10 +24,11 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
-    <title>Vinicius Passos | Game Designer</title>
+    <title>Vinicius Passos | Game Designer & Unity Developer</title>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-to-content">Pular para conteúdo principal</a>
     <div class="noise-overlay"></div>
     <div class="scanlines"></div>
 
@@ -45,18 +46,21 @@
 
             <nav class="nav-menu">
                 <ul class="nav-list">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#games" class="nav-link">Games</a></li>
-                    <li><a href="#contact" class="nav-link btn-primary">Contact</a></li>
+                    <li><a href="#home" class="nav-link active" data-i18n="nav-home">Início</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav-about">Sobre</a></li>
+                    <li><a href="#skills" class="nav-link" data-i18n="nav-skills">Habilidades</a></li>
+                    <li><a href="#experience" class="nav-link" data-i18n="nav-experience">Experiência</a></li>
+                    <li><a href="#education" class="nav-link" data-i18n="nav-education">Educação</a></li>
+                    <li><a href="#games" class="nav-link" data-i18n="nav-projects">Projetos</a></li>
+                    <li><a href="websites.html" class="nav-link" data-i18n="nav-web">Sites Web</a></li>
+                    <li><a href="#contact" class="nav-link btn-primary" data-i18n="nav-contact">Contato</a></li>
                 </ul>
             </nav>
+            <button class="lang-toggle" aria-label="Alterar idioma" data-lang="pt">PT / EN</button>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section id="home" class="hero-section">
             <div class="container hero-container">
                 <div class="hero-content">
@@ -64,12 +68,13 @@
                         <h1 class="hero-title glitch" data-text="Vinicius Passos">Vinicius Passos</h1>
                     </div>
                     <h2 class="hero-subtitle">Game Designer <span class="accent">&</span> Unity Developer</h2>
-                    <p class="hero-description">
-                        Crafting immersive digital experiences and bringing worlds to life through code and design.
+                    <p class="hero-description" data-i18n="hero-desc">
+                        Game Designer & Unity Developer com foco em experiências imersivas para mobile e PC. Histórico de
+                        lançamentos com forte retenção e ciclos rápidos de prototipagem a release.
                     </p>
                     <div class="hero-cta">
-                        <a href="#games" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                        <a href="mailto:vini.gamedesigner@gmail.com?subject=Oportunidade%20de%20Colaboração&body=Olá%20Vinicius,%0D%0A%0D%0A" class="btn btn-primary" data-i18n="hero-cta-primary">Entrar em Contato</a>
+                        <a href="#games" class="btn btn-outline" data-i18n="hero-cta-secondary">Ver Projetos</a>
                     </div>
 
                     <div class="social-links-hero">
@@ -106,7 +111,7 @@
                 </div>
                 <div class="hero-visual">
                     <div class="profile-frame">
-                        <img src="images/profile.png" alt="Vinicius Passos" class="profile-img">
+                        <img src="images/profile.png" alt="Vinicius Passos" class="profile-img" loading="eager" fetchpriority="high">
                         <div class="frame-corner top-left"></div>
                         <div class="frame-corner top-right"></div>
                         <div class="frame-corner bottom-left"></div>
@@ -115,47 +120,65 @@
                 </div>
             </div>
             <div class="scroll-indicator">
-                <span>Scroll</span>
+                <span data-i18n="scroll-text">Scroll</span>
                 <div class="mouse"></div>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="social-proof-section">
+            <div class="container">
+                <div class="social-proof-content">
+                    <p class="social-proof-text" data-i18n="social-proof-title">Trabalhei com</p>
+                    <div class="social-proof-logos">
+                        <div class="proof-item">
+                            <span class="proof-name">Ocarina Studios</span>
+                        </div>
+                        <div class="proof-item">
+                            <span class="proof-name">Google Indie Accelerator</span>
+                        </div>
+                        <div class="proof-item">
+                            <span class="proof-name">FAM Centro Universitário</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="about" class="section about-section">
             <div class="container">
-                <h2 class="section-title" data-text="About Me">About Me</h2>
+                <h2 class="section-title" data-text="Sobre Mim" data-i18n="about-title">Sobre Mim</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>
-                            Hey there! I'm <strong class="text-accent">Vinicius</strong>, a passionate Game Designer and
-                            Unity Developer with over 2 years of experience in the industry.
+                        <p data-i18n="about-p1">
+                            Olá! Sou <strong class="text-accent">Vinicius</strong>, Game Designer e Unity Developer com
+                            mais de 2 anos criando jogos e experiências interativas.
                         </p>
-                        <p>
-                            My journey in game development is driven by a simple belief: <em class="text-light">games
-                                are the ultimate medium for storytelling and connection.</em> I specialize in bridging
-                            the gap between creative vision and technical implementation, ensuring that every mechanic
-                            serves the player experience.
+                        <p data-i18n="about-p2">
+                            Acredito que jogos são o meio definitivo para contar histórias e conectar pessoas. Atuo na
+                            ponte entre visão criativa e execução técnica, garantindo que cada mecânica sirva à
+                            experiência do jogador.
                         </p>
-                        <p>
-                            From rapid prototyping to polished releases, I love every step of the process. I'm
-                            constantly learning, experimenting with new technologies, and pushing the boundaries of
-                            what's possible in interactive entertainment.
+                        <p data-i18n="about-p3">
+                            Do protótipo rápido ao lançamento, gosto de iterar com métricas, polir UX/UI e entregar
+                            produtos prontos para escalar.
                         </p>
                         <div class="stats-grid">
                             <div class="stat-item">
                                 <span class="stat-number">2+</span>
-                                <span class="stat-label">Years Exp.</span>
+                                <span class="stat-label" data-i18n="stat-exp">Anos de Exp.</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-number">5+</span>
-                                <span class="stat-label">Shipped Games</span>
+                                <span class="stat-label" data-i18n="stat-games">Jogos Lançados</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-number">100%</span>
-                                <span class="stat-label">Passion</span>
+                                <span class="stat-label" data-i18n="stat-passion">Paixão</span>
                             </div>
                         </div>
                         <a href="https://github.com/user-attachments/files/20271059/ViniciusResumeEN.pdf"
-                            class="btn btn-outline download-cv">
+                            class="btn btn-outline download-cv" data-i18n="btn-resume">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -163,7 +186,7 @@
                                 <polyline points="7 10 12 15 17 10"></polyline>
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
                             </svg>
-                            Download Resume
+                            Baixar Currículo
                         </a>
                     </div>
                 </div>
@@ -172,11 +195,11 @@
 
         <section id="skills" class="section skills-section">
             <div class="container">
-                <h2 class="section-title" data-text="Skills & Tech">Skills & Tech</h2>
+                <h2 class="section-title" data-text="Habilidades & Tecnologias" data-i18n="skills-title">Habilidades & Tecnologias</h2>
 
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3 class="skill-cat-title">Core</h3>
+                        <h3 class="skill-cat-title" data-i18n="skill-core">Core</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Game Design</span>
                             <span class="skill-tag">Unity 2D/3D</span>
@@ -186,7 +209,7 @@
                     </div>
 
                     <div class="skill-category">
-                        <h3 class="skill-cat-title">Technical</h3>
+                        <h3 class="skill-cat-title" data-i18n="skill-technical">Technical</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Gameplay Scripting</span>
                             <span class="skill-tag">UI/UX Implementation</span>
@@ -196,7 +219,7 @@
                     </div>
 
                     <div class="skill-category">
-                        <h3 class="skill-cat-title">Soft Skills</h3>
+                        <h3 class="skill-cat-title" data-i18n="skill-soft">Habilidades Interpessoais</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Agile / Scrum</span>
                             <span class="skill-tag">Team Leadership</span>
@@ -210,21 +233,21 @@
 
         <section id="experience" class="section experience-section">
             <div class="container">
-                <h2 class="section-title" data-text="Experience">Experience</h2>
+                <h2 class="section-title" data-text="Experiência" data-i18n="experience-title">Experiência</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3 class="timeline-role">Game Designer Jr. & Developer</h3>
-                                <span class="timeline-company">Ocarina Studios</span>
-                                <span class="timeline-date">2023 - 2025</span>
+                                <h3 class="timeline-role" data-i18n="exp-ocarina-role">Game Designer Jr. & Developer</h3>
+                                <span class="timeline-company" data-i18n="exp-ocarina-company">Ocarina Studios</span>
+                                <span class="timeline-date" data-i18n="exp-ocarina-date">2023 - 2025</span>
                             </div>
                             <ul class="timeline-details">
-                                <li>Designed and developed mobile games achieving 40% D1 retention.</li>
-                                <li>Led gameplay systems and UI/UX implementation in Unity.</li>
-                                <li>Managed projects and led a team of 5 developers/artists.</li>
-                                <li>Secured acceptance into the Google Indie Accelerator program.</li>
+                                <li data-i18n="exp-ocarina-b1">Criação e desenvolvimento de jogos mobile com retenção D1 de até 40%.</li>
+                                <li data-i18n="exp-ocarina-b2">Liderança de sistemas de gameplay e implementação de UI/UX em Unity.</li>
+                                <li data-i18n="exp-ocarina-b3">Gestão de projeto e liderança de equipe multidisciplinar (5 pessoas).</li>
+                                <li data-i18n="exp-ocarina-b4">Projeto selecionado para o Google Indie Accelerator.</li>
                             </ul>
                         </div>
                     </div>
@@ -233,38 +256,58 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3 class="timeline-role">Digital Games Degree</h3>
-                                <span class="timeline-company">FAM Centro Universitário</span>
-                                <span class="timeline-date">2021 - 2023</span>
+                                <h3 class="timeline-role" data-i18n="exp-degree-role">Digital Games Degree</h3>
+                                <span class="timeline-company" data-i18n="exp-degree-company">FAM Centro Universitário</span>
+                                <span class="timeline-date" data-i18n="exp-degree-date">2021 - 2023</span>
                             </div>
-                            <p class="timeline-desc">Technologist Degree in Digital Games.</p>
-                            <p class="timeline-desc">Graduation Project: "Memories of a Scattered Mind" - A
-                                psychological horror game exploring PTSD.</p>
+                            <p class="timeline-desc" data-i18n="exp-degree-desc1">Tecnólogo em Jogos Digitais.</p>
+                            <p class="timeline-desc" data-i18n="exp-degree-desc2">Projeto final: "Memories of a Scattered Mind" — jogo de horror psicológico explorando memória e PTSD.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section id="education" class="section education-section">
+            <div class="container">
+                <h2 class="section-title" data-text="Educação" data-i18n="education-title">Educação</h2>
+                <div class="education-grid">
+                    <article class="education-card">
+                        <h3 class="education-degree" data-i18n="edu-mba-title">MBA Game Design - Cursando</h3>
+                        <p class="education-inst" data-i18n="edu-mba-inst">Centro Universitário Internacional - UNINTER • São Paulo SP • 2026</p>
+                        <p class="education-desc" data-i18n="edu-mba-desc">MBA em Game Design com foco em liderança de projetos, inovação e tecnologias emergentes (VR/AR, IA e machine learning). Formação voltada para gestão estratégica, desenvolvimento de experiências interativas e acompanhamento das tendências da indústria de jogos.</p>
+                    </article>
+                    <article class="education-card">
+                        <h3 class="education-degree" data-i18n="edu-degree-title">Jogos Digitais | Graduado em 2023</h3>
+                        <p class="education-inst" data-i18n="edu-degree-inst">FAM Centro Universitário • 2023</p>
+                        <p class="education-desc" data-i18n="edu-degree-desc1">Desenvolvi Memories of a Scattered Mind, um jogo de terror psicológico em Unity, promovendo conscientização sobre TEPT por meio de design narrativo inovador.</p>
+                        <p class="education-desc" data-i18n="edu-degree-desc2">Responsável pelo game design e desenvolvimento na game engine Unity.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section id="games" class="section games-section">
             <div class="container">
-                <h2 class="section-title" data-text="Featured Projects">Featured Projects</h2>
+                <h2 class="section-title" data-text="Projetos em Destaque" data-i18n="projects-title">Projetos em Destaque</h2>
                 <div class="projects-grid">
                     <article class="project-card">
                         <div class="project-image-wrapper">
-                            <img src="images/games/dream-quizzz.png" alt="Dream QuiZzz" class="project-image">
+                            <img src="images/games/dream-quizzz.png" alt="Dream QuiZzz" class="project-image" loading="lazy">
                             <div class="project-overlay">
-                                <a href="../games/dream-quizzz.html" class="btn btn-sm">View Details</a>
+                                <a href="games/dream-quizzz.html" class="btn btn-sm" data-i18n="project-btn-details">Ver Detalhes</a>
                             </div>
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">Dream QuiZzz</h3>
-                            <p class="project-category">Puzzle Adventure</p>
-                            <p class="project-desc">An adventure game with unique art style and Trivia elements.</p>
+                            <p class="project-category" data-i18n="proj-dq-cat">Puzzle Adventure</p>
+                            <p class="project-desc" data-i18n="proj-dq-desc">Jogo de aventura com estilo artístico único e elementos de trivia. 
+                                Desenvolvido para mobile com foco em retenção e engajamento.</p>
                             <div class="project-tech">
                                 <span>Unity</span>
                                 <span>C#</span>
                                 <span>Mobile</span>
+                                <span>40% D1 Retention</span>
                             </div>
                         </div>
                     </article>
@@ -272,20 +315,21 @@
                     <article class="project-card">
                         <div class="project-image-wrapper">
                             <img src="images/games/mysterious-restaurant.png" alt="Mysterious Restaurant"
-                                class="project-image">
+                                class="project-image" loading="lazy">
                             <div class="project-overlay">
-                                <a href="../games/mysterious-restaurant.html" class="btn btn-sm">View Details</a>
+                                <a href="games/mysterious-restaurant.html" class="btn btn-sm" data-i18n="project-btn-details">Ver Detalhes</a>
                             </div>
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">Mysterious Restaurant</h3>
-                            <p class="project-category">Simulation / Merge</p>
-                            <p class="project-desc">A cozy restaurant simulation game with Match3 and Merge elements.
-                            </p>
+                            <p class="project-category" data-i18n="proj-mr-cat">Simulation / Merge</p>
+                            <p class="project-desc" data-i18n="proj-mr-desc">Jogo de simulação de restaurante acolhedor com elementos de Match3 e Merge. 
+                                Desenvolvido como Game Designer e Developer líder.</p>
                             <div class="project-tech">
                                 <span>Unity</span>
                                 <span>C#</span>
                                 <span>Mobile</span>
+                                <span>Líder de Equipe</span>
                             </div>
                         </div>
                     </article>
@@ -293,23 +337,27 @@
                     <article class="project-card">
                         <div class="project-image-wrapper">
                             <img src="images/games/memories-scattered-mind.png" alt="Memories of a Scattered Mind"
-                                class="project-image">
+                                class="project-image" loading="lazy">
                             <div class="project-overlay">
-                                <a href="../games/memories.html" class="btn btn-sm">View Details</a>
+                                <a href="games/memories.html" class="btn btn-sm" data-i18n="project-btn-details">Ver Detalhes</a>
                             </div>
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">Memories of a Scattered Mind</h3>
-                            <p class="project-category">Psychological Horror</p>
-                            <p class="project-desc">Experimental horror narrative game exploring memory and perception.
-                            </p>
+                            <p class="project-category" data-i18n="proj-mem-cat">Psychological Horror</p>
+                            <p class="project-desc" data-i18n="proj-mem-desc">Jogo narrativo experimental de horror psicológico explorando memória e percepção. 
+                                Projeto de graduação premiado.</p>
                             <div class="project-tech">
                                 <span>Unity</span>
                                 <span>3D</span>
                                 <span>PC</span>
+                                <span>Projeto de Graduação</span>
                             </div>
                         </div>
                     </article>
+                </div>
+                <div class="projects-cta">
+                    <a href="https://vxnx.itch.io/" target="_blank" class="btn btn-outline" data-i18n="projects-cta">Ver Mais Projetos no Itch.io</a>
                 </div>
             </div>
         </section>
@@ -317,19 +365,27 @@
         <section id="contact" class="section contact-section">
             <div class="container contact-container">
                 <div class="contact-content">
-                    <h2 class="section-title" data-text="Let's Connect">Let's Connect</h2>
-                    <p class="contact-text">
-                        Interested in collaborating or have a project in mind? I'm currently available for new
-                        opportunities.
+                    <h2 class="section-title" data-text="Vamos Conversar" data-i18n="contact-title">Vamos Conversar</h2>
+                    <p class="contact-text" data-i18n="contact-text">
+                        Interessado em colaborar ou tem um projeto em mente? Estou disponível para novas oportunidades 
+                        em tempo integral ou projetos freelance.
                     </p>
-                    <a href="mailto:vini.gamedesigner@gmail.com" class="email-link">vini.gamedesigner@gmail.com</a>
+                    <a href="mailto:vini.gamedesigner@gmail.com?subject=Oportunidade%20de%20Colaboração&body=Olá%20Vinicius,%0D%0A%0D%0A" class="email-link" data-i18n="contact-email-text">vini.gamedesigner@gmail.com</a>
+                    <p class="contact-availability" data-i18n="contact-availability">Disponível para freelas e tempo integral</p>
 
                     <div class="social-links-large">
+                        <a href="mailto:vini.gamedesigner@gmail.com?subject=Oportunidade%20de%20Colaboração&body=Olá%20Vinicius,%0D%0A%0D%0A" class="social-btn btn-email">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span data-i18n="contact-btn-email">Enviar Email</span>
+                        </a>
                         <a href="https://www.linkedin.com/in/vinipassos4/" target="_blank" class="social-btn">
-                            <span>LinkedIn</span>
+                            <span data-i18n="contact-linkedin-text">LinkedIn</span>
                         </a>
                         <a href="https://vxnx.itch.io/" target="_blank" class="social-btn">
-                            <span>Itch.io</span>
+                            <span data-i18n="contact-itch-text">Itch.io</span>
                         </a>
                     </div>
                 </div>
@@ -340,7 +396,7 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Vinicius Passos. All rights reserved.</p>
-            <p class="footer-credit">Designed & Built by VXNX</p>
+            <p class="footer-credit" data-i18n="footer-credit">Desenhado e desenvolvido por VXNX</p>
         </div>
     </footer>
 
