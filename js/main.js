@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'nav-experience': { pt: 'Experiência', en: 'Experience' },
         'nav-education': { pt: 'Educação', en: 'Education' },
         'nav-projects': { pt: 'Projetos', en: 'Projects' },
-        'nav-web': { pt: 'Sites Web', en: 'Web Sites' },
+
         'nav-contact': { pt: 'Contato', en: 'Contact' },
         'scroll-text': { pt: 'Rolar', en: 'Scroll' },
         'hero-desc': {
