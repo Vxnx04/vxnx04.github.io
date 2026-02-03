@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             mobileMenuBtn.classList.toggle('active');
-            
+
             // Animate hamburger icon
             const spans = mobileMenuBtn.querySelectorAll('span');
             if (navMenu.classList.contains('active')) {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
             mobileMenuBtn.classList.remove('active');
-            
+
             // Reset hamburger icon
             const spans = mobileMenuBtn.querySelectorAll('span');
             spans[0].style.transform = 'none';
@@ -39,14 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Active Navigation Highlight on Scroll
     const sections = document.querySelectorAll('section');
-    
+
     window.addEventListener('scroll', () => {
         let current = '';
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            
+
             if (scrollY >= (sectionTop - 200)) {
                 current = section.getAttribute('id');
             }
@@ -75,12 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 const headerOffset = 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-    
+
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: "smooth"
@@ -290,6 +290,132 @@ document.addEventListener('DOMContentLoaded', () => {
         'web-contact-text': {
             pt: 'Vamos conversar sobre seu projeto web — identidade, copy, SEO e performance alinhados ao seu negócio.',
             en: 'Let’s discuss your web project—identity, copy, SEO, and performance tailored to your business.'
+        },
+
+        /* Shared Game Page Keys */
+        'nav-games': { pt: 'Jogos', en: 'Games' },
+        'nav-contact': { pt: 'Contato', en: 'Contact' },
+        'platform-mobile': { pt: 'Mobile', en: 'Mobile' },
+        'platform-desktop': { pt: 'Desktop', en: 'Desktop' },
+        'status-released': { pt: 'Lançado', en: 'Released' },
+        'status-demo': { pt: 'Demo', en: 'Demo' },
+        'play-btn-play': { pt: 'Jogar Agora', en: 'Play Game' },
+        'play-btn-itch': { pt: 'Jogar no Itch.io', en: 'Play on Itch.io' },
+        'game-about-title': { pt: 'Sobre o Jogo', en: 'About the Game' },
+        'role-title': { pt: 'Meu Papel', en: 'My Role' },
+        'role-gd': { pt: 'Game Designer', en: 'Game Designer' },
+        'role-unity': { pt: 'Desenvolvedor Unity', en: 'Unity Developer' },
+        'role-ld': { pt: 'Level Designer', en: 'Level Designer' },
+        'role-sd': { pt: 'Sound Designer', en: 'Sound Designer' },
+        'resp-title': { pt: 'Responsabilidades', en: 'Responsibilities' },
+        'tech-title': { pt: 'Tecnologias Usadas', en: 'Technologies Used' },
+        'journey-title': { pt: 'Jornada de Desenvolvimento', en: 'Development Journey' },
+        'back-to-games': { pt: '← Voltar para Jogos', en: '← Back to Games' },
+
+        /* Dream QuiZzz Translations */
+        'dq-about-desc': {
+            pt: 'Ambientado em um mundo de sonhos misterioso onde o conhecimento impulsiona o progresso, os jogadores devem responder a perguntas de trivia para se aproximar do Portal Final. A jornada é não-linear, com caminhos ramificados e dificuldade crescente, incentivando o pensamento estratégico e a exploração. À medida que progridem, os jogadores restauram gradualmente uma utopia de conhecimento despedaçada reconstruindo partes do Mundo dos Sonhos.',
+            en: 'Set in a mysterious dream world where knowledge fuels progress, players must answer trivia questions to move closer to the End Portal. The journey is non-linear, with branching paths and escalating difficulty, encouraging strategic thinking and exploration. As players progress, they gradually restore a shattered utopia of knowledge by rebuilding parts of the Dream World.'
+        },
+        'dq-resp-1': {
+            pt: 'Projetei mecânicas principais de gameplay combinando trivia e aventura, balanceando desafio, ritmo e fluxo do jogador',
+            en: 'Designed core gameplay mechanics combining trivia and adventure, balancing challenge, pacing, and player flow'
+        },
+        'dq-resp-2': {
+            pt: 'Implementei sistemas principais e UI/UX no Unity, incluindo lógica de quiz, progressão, navegação de fases e animações de feedback',
+            en: 'Implemented core systems and UI/UX in Unity, including quiz logic, progression, stage navigation, and feedback animations'
+        },
+        'dq-resp-3': {
+            pt: 'Mantive a documentação de game design, garantindo visão consistente, comunicação clara e gerenciamento de escopo',
+            en: 'Maintained game design documentation, ensuring consistent vision, clear communication, and scope management'
+        },
+        'dq-resp-4': {
+            pt: 'Liderei e participei de playtests regulares, coletando feedback qualitativo e iterando no gameplay e UX',
+            en: 'Led and participated in regular playtests, collecting qualitative feedback and iterating on gameplay and UX'
+        },
+        'dq-resp-5': {
+            pt: 'Monitorei dados analíticos (Firebase) para apoiar decisões de design baseadas em dados e medir retenção e pontos de desistência',
+            en: 'Monitored analytics data (Firebase) to support data-driven design decisions and measure retention and drop-off points'
+        },
+        'dq-tech-1': { pt: 'Unity Engine (Sistemas 2D & UI)', en: 'Unity Engine (2D & UI systems)' },
+        'dq-tech-2': { pt: 'C# (scripting de gameplay, lógica de UI e fluxo de jogo)', en: 'C# (scripting gameplay, UI logic, and game flow)' },
+        'dq-tech-3': { pt: 'Figma (wireframes de UI, fluxogramas e mockups)', en: 'Figma (UI wireframes, flowcharts, and mockups)' },
+        'dq-tech-4': { pt: 'Firebase (Remote Config, Analytics)', en: 'Firebase (Remote Config, Analytics)' },
+        'dq-journey-p': {
+            pt: 'Criar Dream QuiZzz foi um mergulho profundo no design de gameplay híbrido, misturando mecânicas de trivia com progressão estilo aventura. Isso exigiu prototipagem rápida, ciclos de feedback com jogadores e colaboração multifuncional.',
+            en: 'Creating Dream Quizzz was a deep dive into hybrid gameplay design, blending trivia mechanics with adventure-style progression. This required rapid prototyping, player feedback loops, and cross-functional collaboration.'
+        },
+        'dq-journey-1': {
+            pt: 'Encontrar o equilíbrio certo entre agência do jogador e fluxo de trivia foi desafiador. Prototipamos múltiplos modelos de interação e testamos com jogadores reais para criar uma experiência envolvente que mantém a emoção de ambos os gêneros.',
+            en: 'Finding the right balance between player agency and trivia flow was challenging. We prototyped multiple interaction models and tested them with real players to create an engaging experience that maintains the excitement of both genres.'
+        },
+        'dq-journey-2': {
+            pt: 'A importância do design mobile-first ficou clara ao focarmos na usabilidade com uma mão e entrega intuitiva de perguntas. Aprendemos a priorizar a experiência do usuário mantendo as mecânicas principais do jogo.',
+            en: 'The importance of mobile-first design became clear as we focused on one-handed usability and instinctive question delivery. We learned to prioritize user experience while maintaining the game\'s core mechanics.'
+        },
+        'dq-journey-3': {
+            pt: 'Implementamos um sistema de dificuldade dinâmica que se adapta ao desempenho do jogador, garantindo uma experiência desafiadora porém justa. O sistema usa Firebase Analytics para rastrear comportamento do jogador e ajustar a dificuldade das perguntas.',
+            en: 'We implemented a dynamic difficulty system that adapts to player performance, ensuring a challenging yet fair experience. The system uses Firebase Analytics to track player behavior and adjust question difficulty accordingly.'
+        },
+
+        /* Mysterious Restaurant Translations */
+        'mr-about-desc': {
+            pt: 'Herde um restaurante atemporal e conecte-se com seus clientes através de desafios únicos. Um jogo de simulação de restaurante com mecânicas de match-3 e merge.',
+            en: 'Inherit a timeless restaurant, and connect with your customers through unique challenges. A restaurant simulation game with match-3 and merge mechanics.'
+        },
+        'mr-resp-1': { pt: 'Projetei o jogo e o onboarding', en: 'Designed the game and onboarding' },
+        'mr-resp-2': { pt: 'Implementei sistemas de jogo e UI no Unity', en: 'Implemented game systems and UI in Unity' },
+        'mr-resp-3': { pt: 'Mantive a documentação', en: 'Maintained documentation' },
+        'mr-resp-4': { pt: 'Realizei playtests e iterações baseadas em feedback', en: 'Playtested and iterated based on feedback' },
+        'mr-resp-5': { pt: 'Rastreei dados analíticos', en: 'Tracked analytics data' },
+        'mr-tech-1': { pt: 'Unity Engine', en: 'Unity Engine' },
+        'mr-tech-2': { pt: 'C#', en: 'C#' },
+        'mr-tech-3': { pt: 'Figma (para UI/UX)', en: 'Figma (for UI/UX)' },
+        'mr-tech-4': { pt: 'Firebase', en: 'Firebase' },
+        'mr-journey-p': {
+            pt: 'Este projeto começou originalmente como um jogo de restaurante baseado em trivia. No entanto, depois pivotamos para um estilo de gameplay match-3 para apoiar melhor o tema de restaurante e melhorar o engajamento.',
+            en: 'This project originally began as a trivia-based restaurant game. However, we later pivoted to a match-3 gameplay style to better support the restaurant theme and improve engagement.'
+        },
+        'mr-journey-1': {
+            pt: 'Integrar trivia em um ambiente de restaurante foi difícil. O pivô para mecânicas de match-3 e merge permitiu um loop de gameplay mais natural e envolvente.',
+            en: 'Integrating trivia into a restaurant setting was difficult. The pivot to match-3 and merge mechanics allowed for a more natural and engaging gameplay loop.'
+        },
+        'mr-journey-2': {
+            pt: 'Aprendi a importância de adaptar o design baseado no feedback dos jogadores e analíticos, e como misturar diferentes gêneros para uma experiência única.',
+            en: 'Learned the importance of adapting design based on player feedback and analytics, and how to blend different genres for a unique experience.'
+        },
+        'mr-journey-3': {
+            pt: 'Desenvolvi um sistema de ciclo dia/noite e comportamentos dinâmicos de clientes para manter o gameplay fresco e rejogável.',
+            en: 'Developed a day/night cycle system and dynamic customer behaviors to keep gameplay fresh and replayable.'
+        },
+
+        /* Memories Translations */
+        'mem-about-desc': {
+            pt: 'Memories of a Scattered Mind é um jogo de horror psicológico que coloca você na pele de William George Harrison, veterano do Exército dos EUA da Guerra do Vietnã. Após uma série de acontecimentos traumáticos em sua vida, junto com um caso mal tratado de TEPT, William tem experimentado ocorrências estranhas em sua própria casa.',
+            en: 'Memories of a Scattered Mind is a Psychological Horror Game that sets you into the shoes of William George Harrison, US Army Vet from the Vietnam War. Following a series of traumatic happenings in his life, along with a poorly treated case PTSD, William has been experiencing strange occurrences around his own home.'
+        },
+        'mem-resp-1': { pt: 'Projetei o jogo e os níveis', en: 'Designed the game and levels' },
+        'mem-resp-2': { pt: 'Implementei sistemas de jogo e UI no Unity', en: 'Implemented game systems and UI in Unity' },
+        'mem-resp-3': { pt: 'Mantive a documentação', en: 'Maintained documentation' },
+        'mem-resp-4': { pt: 'Criei e implementei o design de som', en: 'Created and implemented sound design' },
+        'mem-tech-1': { pt: 'Unity Engine', en: 'Unity Engine' },
+        'mem-tech-2': { pt: 'C#', en: 'C#' },
+        'mem-tech-3': { pt: 'Figma (para UI/UX)', en: 'Figma (for UI/UX)' },
+        'mem-journey-p': {
+            pt: '<em>Memories of a Scattered Mind</em> foi meu primeiro projeto 3D na Unity — uma experiência de horror psicológico focada em narrativa e atmosfera em vez de jump scares tradicionais.',
+            en: '<em>Memories of a Scattered Mind</em> was my first 3D project in Unity — a psychological horror experience focused on storytelling and atmosphere over traditional jump scares.'
+        },
+        'mem-journey-1': {
+            pt: 'Manter a tensão e o medo sem jump scares exigiu design de nível cuidadoso, ritmo e trabalho de áudio. Focamos em narrativa ambiental e pistas sutis para imergir os jogadores na mente fraturada de William.',
+            en: 'Maintaining tension and dread without jump scares required careful level design, pacing, and audio work. We focused on environmental storytelling and subtle cues to immerse players in William\'s fractured mind.'
+        },
+        'mem-journey-2': {
+            pt: 'Aprendi a importância do ritmo e design ambiental no horror psicológico, e como o som pode ser usado para conduzir emoção e narrativa.',
+            en: 'Learned the importance of pacing and environmental design in psychological horror, and how sound can be used to drive emotion and narrative.'
+        },
+        'mem-journey-3': {
+            pt: 'Desenvolvi gatilhos de áudio personalizados e sistemas de iluminação dinâmica para melhorar a imersão e a experiência do jogador.',
+            en: 'Developed custom audio triggers and dynamic lighting systems to enhance immersion and player experience.'
         }
     };
 

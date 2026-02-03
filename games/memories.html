@@ -36,11 +36,13 @@
 
             <nav class="nav-menu">
                 <ul class="nav-list">
-                    <li><a href="../index.html#home" class="nav-link">Home</a></li>
-                    <li><a href="../index.html#games" class="nav-link active">Games</a></li>
-                    <li><a href="../index.html#contact" class="nav-link btn-primary">Contact</a></li>
+                    <li><a href="../index.html#home" class="nav-link" data-i18n="nav-home">Home</a></li>
+                    <li><a href="../index.html#games" class="nav-link active" data-i18n="nav-games">Games</a></li>
+                    <li><a href="../index.html#contact" class="nav-link btn-primary" data-i18n="nav-contact">Contact</a>
+                    </li>
                 </ul>
             </nav>
+            <button class="lang-toggle" aria-label="Alterar idioma" data-lang="pt">PT / EN</button>
         </div>
     </header>
 
@@ -51,21 +53,21 @@
                 <div class="game-header">
                     <h1 class="game-title">Memories of a Scattered Mind</h1>
                     <div class="game-tags">
-                        <span class="platform-tag">Desktop</span>
-                        <span class="status-tag">Demo</span>
+                        <span class="platform-tag" data-i18n="platform-desktop">Desktop</span>
+                        <span class="status-tag" data-i18n="status-demo">Demo</span>
                     </div>
                 </div>
 
                 <div class="game-video">
-                    <iframe src="https://www.youtube.com/embed/8BBHTW10JM0" title="Memories of A Scattered Mind Teaser"
-                        frameborder="0"
+                    <iframe src="https://www.youtube.com/embed/8BBHTW10JM0"
+                        title="Memories of A Scattered Mind Teaser(Psychological Horror Game) (gamedev)" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
 
                 <div class="play-game-container">
                     <a href="https://vxnx.itch.io/memories-of-a-scattered-mind" class="play-game-btn" target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener noreferrer" data-i18n="play-btn-itch">
                         Play on Itch.io
                     </a>
                 </div>
@@ -74,8 +76,9 @@
             <!-- Game Overview -->
             <section class="game-overview">
                 <div class="game-description">
-                    <h2 class="section-title" data-text="About">About the Game</h2>
-                    <p>Memories of a Scattered Mind is a Psychological Horror Game that sets you into the shoes of
+                    <h2 class="section-title" data-text="About" data-i18n="game-about-title">About the Game</h2>
+                    <p data-i18n="mem-about-desc">Memories of a Scattered Mind is a Psychological Horror Game that sets
+                        you into the shoes of
                         William George Harrison, US Army Vet from the Vietnam War. Following a series of traumatic
                         happenings in his life, along with a poorly treated case PTSD, William has been experiencing
                         strange occurrences around his own home.</p>
@@ -85,49 +88,52 @@
             <!-- Development Details -->
             <section class="development-details">
                 <div class="game-info-section">
-                    <h2>My Role</h2>
+                    <h2 data-i18n="role-title">My Role</h2>
                     <ul>
-                        <li>Game Designer</li>
-                        <li>Unity Developer</li>
-                        <li>Level Designer</li>
-                        <li>Sound Designer</li>
+                        <li data-i18n="role-gd">Game Designer</li>
+                        <li data-i18n="role-unity">Unity Developer</li>
+                        <li data-i18n="role-ld">Level Designer</li>
+                        <li data-i18n="role-sd">Sound Designer</li>
                     </ul>
                 </div>
                 <div class="game-info-section">
-                    <h2>Responsibilities</h2>
+                    <h2 data-i18n="resp-title">Responsibilities</h2>
                     <ul>
-                        <li>Designed the game and levels</li>
-                        <li>Implemented game systems and UI in Unity</li>
-                        <li>Maintained documentation</li>
-                        <li>Created and implemented sound design</li>
+                        <li data-i18n="mem-resp-1">Designed the game and levels</li>
+                        <li data-i18n="mem-resp-2">Implemented game systems and UI in Unity</li>
+                        <li data-i18n="mem-resp-3">Maintained documentation</li>
+                        <li data-i18n="mem-resp-4">Created and implemented sound design</li>
                     </ul>
                 </div>
                 <div class="game-info-section">
-                    <h2>Technologies Used</h2>
+                    <h2 data-i18n="tech-title">Technologies Used</h2>
                     <ul>
-                        <li>Unity Engine</li>
-                        <li>C#</li>
-                        <li>Figma (for UI/UX)</li>
+                        <li data-i18n="mem-tech-1">Unity Engine</li>
+                        <li data-i18n="mem-tech-2">C#</li>
+                        <li data-i18n="mem-tech-3">Figma (for UI/UX)</li>
                     </ul>
                 </div>
                 <div class="game-info-section">
-                    <h2>Development Journey</h2>
-                    <p><em>Memories of a Scattered Mind</em> was my first 3D project in Unity — a psychological horror
+                    <h2 data-i18n="journey-title">Development Journey</h2>
+                    <p data-i18n="mem-journey-p"><em>Memories of a Scattered Mind</em> was my first 3D project in Unity
+                        — a psychological horror
                         experience focused on storytelling and atmosphere over traditional jump scares.</p>
                     <ul>
-                        <li>Maintaining tension and dread without jump scares required careful level design, pacing, and
+                        <li data-i18n="mem-journey-1">Maintaining tension and dread without jump scares required careful
+                            level design, pacing, and
                             audio work. We focused on environmental storytelling and subtle cues to immerse players in
                             William's fractured mind.</li>
-                        <li>Learned the importance of pacing and environmental design in psychological horror, and how
+                        <li data-i18n="mem-journey-2">Learned the importance of pacing and environmental design in
+                            psychological horror, and how
                             sound can be used to drive emotion and narrative.</li>
-                        <li>Developed custom audio triggers and dynamic lighting systems to enhance immersion and player
+                        <li data-i18n="mem-journey-3">Developed custom audio triggers and dynamic lighting systems to
+                            enhance immersion and player
                             experience.</li>
                     </ul>
                 </div>
             </section>
-
             <div class="navigation-links">
-                <a href="../index.html#games" class="back-to-games">← Back to Games</a>
+                <a href="../index.html#games" class="back-to-games" data-i18n="back-to-games">← Back to Games</a>
             </div>
         </div>
     </main>

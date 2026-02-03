@@ -36,11 +36,13 @@
 
             <nav class="nav-menu">
                 <ul class="nav-list">
-                    <li><a href="../index.html#home" class="nav-link">Home</a></li>
-                    <li><a href="../index.html#games" class="nav-link active">Games</a></li>
-                    <li><a href="../index.html#contact" class="nav-link btn-primary">Contact</a></li>
+                    <li><a href="../index.html#home" class="nav-link" data-i18n="nav-home">Home</a></li>
+                    <li><a href="../index.html#games" class="nav-link active" data-i18n="nav-games">Games</a></li>
+                    <li><a href="../index.html#contact" class="nav-link btn-primary" data-i18n="nav-contact">Contact</a>
+                    </li>
                 </ul>
             </nav>
+            <button class="lang-toggle" aria-label="Alterar idioma" data-lang="pt">PT / EN</button>
         </div>
     </header>
 
@@ -51,21 +53,22 @@
                 <div class="game-header">
                     <h1 class="game-title">Dream QuiZzz</h1>
                     <div class="game-tags">
-                        <span class="platform-tag">Mobile</span>
-                        <span class="status-tag">Released</span>
+                        <span class="platform-tag" data-i18n="platform-mobile">Mobile</span>
+                        <span class="status-tag" data-i18n="status-released">Released</span>
                     </div>
                 </div>
 
                 <div class="game-video">
-                    <iframe src="https://www.youtube.com/embed/O7ezyZuv9Nw" title="Dream QuiZzz Game Trailer"
+                    <iframe src="https://www.youtube.com/embed/O7ezyZuv9Nw"
+                        title="Dream QuiZzz Game Trailer: Indie-Produced Trivia Adventure Game Like No Other"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
 
                 <div class="play-game-container">
                     <a href="https://ocarinastudios.com/games/dream-quiz" class="play-game-btn" target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener noreferrer" data-i18n="play-btn-play">
                         Play Game
                     </a>
                 </div>
@@ -74,8 +77,9 @@
             <!-- Game Overview -->
             <section class="game-overview">
                 <div class="game-description">
-                    <h2 class="section-title" data-text="About">About the Game</h2>
-                    <p>Set in a mysterious dream world where knowledge fuels progress, players must answer trivia
+                    <h2 class="section-title" data-text="About" data-i18n="game-about-title">About the Game</h2>
+                    <p data-i18n="dq-about-desc">Set in a mysterious dream world where knowledge fuels progress, players
+                        must answer trivia
                         questions to move closer to the End Portal. The journey is non-linear, with branching paths and
                         escalating difficulty, encouraging strategic thinking and exploration. As players progress, they
                         gradually restore a shattered utopia of knowledge by rebuilding parts of the Dream World.</p>
@@ -85,49 +89,58 @@
             <!-- Development Details -->
             <section class="development-details">
                 <div class="game-info-section">
-                    <h2>My Role</h2>
+                    <h2 data-i18n="role-title">My Role</h2>
                     <ul>
-                        <li>Game Designer</li>
-                        <li>Unity Developer</li>
+                        <li data-i18n="role-gd">Game Designer</li>
+                        <li data-i18n="role-unity">Unity Developer</li>
                     </ul>
                 </div>
                 <div class="game-info-section">
-                    <h2>Responsibilities</h2>
+                    <h2 data-i18n="resp-title">Responsibilities</h2>
                     <ul>
-                        <li>Designed core gameplay mechanics combining trivia and adventure, balancing challenge,
+                        <li data-i18n="dq-resp-1">Designed core gameplay mechanics combining trivia and adventure,
+                            balancing challenge,
                             pacing, and player flow</li>
-                        <li>Implemented core systems and UI/UX in Unity, including quiz logic, progression, stage
+                        <li data-i18n="dq-resp-2">Implemented core systems and UI/UX in Unity, including quiz logic,
+                            progression, stage
                             navigation, and feedback animations</li>
-                        <li>Maintained game design documentation, ensuring consistent vision, clear communication, and
+                        <li data-i18n="dq-resp-3">Maintained game design documentation, ensuring consistent vision,
+                            clear communication, and
                             scope management</li>
-                        <li>Led and participated in regular playtests, collecting qualitative feedback and iterating on
+                        <li data-i18n="dq-resp-4">Led and participated in regular playtests, collecting qualitative
+                            feedback and iterating on
                             gameplay and UX</li>
-                        <li>Monitored analytics data (Firebase) to support data-driven design decisions and measure
+                        <li data-i18n="dq-resp-5">Monitored analytics data (Firebase) to support data-driven design
+                            decisions and measure
                             retention and drop-off points</li>
                     </ul>
                 </div>
                 <div class="game-info-section">
-                    <h2>Technologies Used</h2>
+                    <h2 data-i18n="tech-title">Technologies Used</h2>
                     <ul>
-                        <li>Unity Engine (2D & UI systems)</li>
-                        <li>C# (scripting gameplay, UI logic, and game flow)</li>
-                        <li>Figma (UI wireframes, flowcharts, and mockups)</li>
-                        <li>Firebase (Remote Config, Analytics)</li>
+                        <li data-i18n="dq-tech-1">Unity Engine (2D & UI systems)</li>
+                        <li data-i18n="dq-tech-2">C# (scripting gameplay, UI logic, and game flow)</li>
+                        <li data-i18n="dq-tech-3">Figma (UI wireframes, flowcharts, and mockups)</li>
+                        <li data-i18n="dq-tech-4">Firebase (Remote Config, Analytics)</li>
                     </ul>
                 </div>
                 <div class="game-info-section">
-                    <h2>Development Journey</h2>
-                    <p>Creating Dream Quizzz was a deep dive into hybrid gameplay design, blending trivia mechanics with
+                    <h2 data-i18n="journey-title">Development Journey</h2>
+                    <p data-i18n="dq-journey-p">Creating Dream Quizzz was a deep dive into hybrid gameplay design,
+                        blending trivia mechanics with
                         adventure-style progression. This required rapid prototyping, player feedback loops, and
                         cross-functional collaboration.</p>
                     <ul>
-                        <li>Finding the right balance between player agency and trivia flow was challenging. We
+                        <li data-i18n="dq-journey-1">Finding the right balance between player agency and trivia flow was
+                            challenging. We
                             prototyped multiple interaction models and tested them with real players to create an
                             engaging experience that maintains the excitement of both genres.</li>
-                        <li>The importance of mobile-first design became clear as we focused on one-handed usability and
+                        <li data-i18n="dq-journey-2">The importance of mobile-first design became clear as we focused on
+                            one-handed usability and
                             intuitive question delivery. We learned to prioritize user experience while maintaining the
                             game's core mechanics.</li>
-                        <li>We implemented a dynamic difficulty system that adapts to player performance, ensuring a
+                        <li data-i18n="dq-journey-3">We implemented a dynamic difficulty system that adapts to player
+                            performance, ensuring a
                             challenging yet fair experience. The system uses Firebase Analytics to track player behavior
                             and adjust question difficulty accordingly.</li>
                     </ul>
