@@ -438,6 +438,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.innerHTML = value;
             }
 
+            if (key === 'btn-resume') {
+                const resumeUrls = {
+                    pt: 'https://github.com/user-attachments/files/25074221/Vinicius.PT-BR.pdf',
+                    en: 'https://github.com/user-attachments/files/25074220/Vinicius.EN.pdf'
+                };
+                el.href = resumeUrls[language] || resumeUrls.pt;
+            }
+
             if (el.hasAttribute('data-text')) {
                 el.setAttribute('data-text', value);
             }
