@@ -1,0 +1,386 @@
+/* POCKET RPG MINIGAME */
+
+/* Variables */
+:root {
+    --rpg-bg: #0a0a0c;
+    /* Darker to match site */
+    --rpg-ui-bg: rgba(0, 0, 0, 0.8);
+    --rpg-text: #e2e8f0;
+    --rpg-accent: #6366f1;
+    /* Indigo to match site */
+    --rpg-danger: #ef4444;
+    /* Red */
+    --rpg-health: #10b981;
+    /* Emerald */
+    --rpg-mana: #3b82f6;
+    /* Blue */
+}
+
+/* Container */
+.minigame-container {
+    width: 100%;
+    max-width: 800px;
+    /* Constrained width */
+    margin: 40px auto;
+    background: var(--rpg-bg);
+    border: 2px solid var(--border-base);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Space Grotesk', monospace;
+    /* Gamey font */
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 16/9;
+    /* Maintain game aspect ratio */
+}
+
+/* Header / HUD */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid var(--border-base);
+    font-size: 14px;
+    color: var(--rpg-text);
+}
+
+.resource-group {
+    display: flex;
+    gap: 16px;
+}
+
+.resource {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+}
+
+/* Game Area */
+.game-viewport {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #2d2d35 0%, #1a1a20 100%);
+    overflow: hidden;
+}
+
+/* Floor Indicator */
+.floor-indicator {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+}
+
+/* Entities */
+.entity {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    position: relative;
+    transition: transform 0.1s;
+    user-select: none;
+}
+
+.player-entity {
+    color: var(--rpg-mana);
+    margin-right: 60px;
+    /* Spacing */
+}
+
+.enemy-entity {
+    color: var(--rpg-danger);
+    cursor: crosshair;
+    /* Indicate interactable? */
+}
+
+/* HP Bars */
+.hp-bar-container {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.hp-bar-fill {
+    height: 100%;
+    background: var(--rpg-health);
+    width: 100%;
+    transition: width 0.2s ease-out;
+}
+
+/* Enemy HP is red */
+.enemy-entity .hp-bar-fill {
+    background: var(--rpg-danger);
+}
+
+.hp-text {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    white-space: nowrap;
+    font-family: monospace;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Controls / Action Bar */
+.game-controls {
+    padding: 20px;
+    background: var(--rpg-ui-bg);
+    border-top: 2px solid var(--border-base);
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.action-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    border: 2px solid var(--border-base);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--rpg-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.1s;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    border-color: var(--rpg-accent);
+}
+
+.action-btn:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
+.action-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.action-key {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 4px;
+    right: 6px;
+}
+
+.action-cooldown {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    /* Fills up */
+    background: rgba(0, 0, 0, 0.6);
+    transition: height 0.1s linear;
+}
+
+/* Start Overlay */
+.game-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    text-align: center;
+    padding: 40px;
+}
+
+.game-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--rpg-accent);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.btn-start {
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    background: var(--rpg-accent);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-start:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
+/* Animations */
+@keyframes shake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-2px, 2px);
+    }
+
+    50% {
+        transform: translate(2px, -2px);
+    }
+
+    75% {
+        transform: translate(-2px, -2px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.shake {
+    animation: shake 0.3s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes damageFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+.damage-number {
+    position: absolute;
+    color: #fff;
+    font-weight: 800;
+    font-size: 20px;
+    pointer-events: none;
+    animation: damageFloat 0.8s ease-out forwards;
+    z-index: 10;
+    text-shadow: 0 2px 0 #000;
+}
+
+.damage-crit {
+    color: var(--rpg-accent);
+    font-size: 36px;
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+    /* Glowing */
+}
+
+/* Shop Styles */
+.shop-item {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-base);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--rpg-text);
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 12px;
+}
+
+.shop-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--rpg-accent);
+    transform: translateY(-2px);
+}
+
+.shop-item:active {
+    transform: translateY(0);
+}
+
+.shop-item.disabled {
+    opacity: 0.5;
+    filter: grayscale(1);
+    cursor: not-allowed;
+}
+
+/* Helpers */
+.hidden {
+    display: none !important;
+}
+
+/* Damage Overlay (Red flash) */
+.damage-overlay {
+    position: absolute;
+    inset: 0;
+    background: red;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s;
+    border-radius: inherit;
+    z-index: 5;
+}
+
+.damage-flash {
+    opacity: 0.3;
+}
+
+/* Particle System */
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleFade 0.6s ease-out forwards;
+    z-index: 15;
+}
+
+@keyframes particleFade {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--mx), var(--my)) scale(0);
+        opacity: 0;
+    }
+}

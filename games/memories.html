@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories of a Scattered Mind | Vinicius Passos</title>
+    <meta name="description"
+        content="Memories of a Scattered Mind — A psychological horror game exploring memory and PTSD.">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="tech-grid"></div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor-dot" class="cursor-dot"></div>
+    <div id="cursor-ring" class="cursor-ring"></div>
+
+    <!-- Nav Dock -->
+    <nav class="nav-dock" id="nav-dock">
+        <a href="../index.html#profile" class="nav-btn" aria-label="Home"><i data-lucide="home" class="w-5 h-5"></i></a>
+        <a href="../index.html#work" class="nav-btn" aria-label="Projects"><i data-lucide="layers"
+                class="w-5 h-5"></i></a>
+        <div class="w-px h-6 bg-white/10 my-auto mx-1"></div>
+        <a href="mailto:vini.gamedesigner@gmail.com" class="nav-btn" aria-label="Email"><i data-lucide="mail"
+                class="w-5 h-5"></i></a>
+        <button class="nav-btn lang-toggle" aria-label="Language" data-lang="en"><i data-lucide="languages"
+                class="w-5 h-5"></i></button>
+    </nav>
+
+    <div id="grid" class="grid-container spotlight-group">
+
+        <!-- Back Link -->
+        <div class="col-span-4">
+            <a href="../index.html#work" class="back-link" data-i18n="back-to-games">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> ← Back to Games
+            </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div class="card col-span-4 p-0 reveal">
+            <div class="game-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/8BBHTW10JM0" title="Memories of A Scattered Mind Teaser"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="p-8 md:p-10">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="pill" data-i18n="platform-desktop">Desktop</span>
+                            <span class="pill" style="border-color: rgba(99,102,241,0.3); color: #6366F1;"
+                                data-i18n="status-demo">Demo</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-gradient tracking-tighter">Memories of a
+                            Scattered Mind</h1>
+                    </div>
+                    <a href="https://vxnx.itch.io/memories-of-a-scattered-mind" target="_blank"
+                        rel="noopener noreferrer" class="play-btn" data-i18n="play-btn-itch">
+                        <i data-lucide="play" class="w-5 h-5"></i> Play on Itch.io
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="card col-span-4 md:col-span-3 p-8 reveal delay-100">
+            <div class="game-section">
+                <h2 data-i18n="game-about-title">About the Game</h2>
+                <p data-i18n="mem-about-desc">Memories of a Scattered Mind is a Psychological Horror Game that sets you
+                    into the shoes of William George Harrison, US Army Vet from the Vietnam War. Following a series of
+                    traumatic happenings in his life, along with a poorly treated case PTSD, William has been
+                    experiencing strange occurrences around his own home.</p>
+            </div>
+        </div>
+
+        <!-- Role -->
+        <div class="card col-span-4 md:col-span-1 p-8 reveal delay-200">
+            <div class="game-section">
+                <h2 data-i18n="role-title">My Role</h2>
+                <ul>
+                    <li data-i18n="role-gd">Game Designer</li>
+                    <li data-i18n="role-unity">Unity Developer</li>
+                    <li data-i18n="role-ld">Level Designer</li>
+                    <li data-i18n="role-sd">Sound Designer</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Responsibilities -->
+        <div class="card col-span-4 md:col-span-2 p-8 reveal delay-100">
+            <div class="game-section">
+                <h2 data-i18n="resp-title">Responsibilities</h2>
+                <ul>
+                    <li data-i18n="mem-resp-1">Designed the game and levels</li>
+                    <li data-i18n="mem-resp-2">Implemented game systems and UI in Unity</li>
+                    <li data-i18n="mem-resp-3">Maintained documentation</li>
+                    <li data-i18n="mem-resp-4">Created and implemented sound design</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tech -->
+        <div class="card col-span-4 md:col-span-2 p-8 reveal delay-200">
+            <div class="game-section">
+                <h2 data-i18n="tech-title">Technologies Used</h2>
+                <ul>
+                    <li data-i18n="mem-tech-1">Unity Engine</li>
+                    <li data-i18n="mem-tech-2">C#</li>
+                    <li data-i18n="mem-tech-3">Figma (for UI/UX)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Journey -->
+        <div class="card col-span-4 p-8 reveal">
+            <div class="game-section">
+                <h2 data-i18n="journey-title">Development Journey</h2>
+                <p data-i18n="mem-journey-p"><em>Memories of a Scattered Mind</em> was my first 3D project in Unity — a
+                    psychological horror experience focused on storytelling and atmosphere over traditional jump scares.
+                </p>
+                <ul class="mt-4">
+                    <li data-i18n="mem-journey-1">Maintaining tension and dread without jump scares required careful
+                        level design, pacing, and audio work. We focused on environmental storytelling and subtle cues
+                        to immerse players in William's fractured mind.</li>
+                    <li data-i18n="mem-journey-2">Learned the importance of pacing and environmental design in
+                        psychological horror, and how sound can be used to drive emotion and narrative.</li>
+                    <li data-i18n="mem-journey-3">Developed custom audio triggers and dynamic lighting systems to
+                        enhance immersion and player experience.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="text-center text-xs text-[var(--text-dim)] pb-8 font-mono">
+        © <span id="year"></span> Vinicius Passos // <span data-i18n="footer-credit">Designed & Built by VXNX</span>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

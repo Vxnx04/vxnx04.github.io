@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinicius Passos | Game Designer & Developer</title>
+    <meta name="description"
+        content="Game Designer & Unity Developer focused on immersive experiences for mobile and PC. Track record of launches with strong retention and fast prototyping-to-release cycles.">
+    <meta property="og:title" content="Vinicius Passos | Game Designer & Developer">
+    <meta property="og:description"
+        content="Game Designer & Unity Developer focused on immersive experiences for mobile and PC.">
+    <meta property="og:image" content="images/profile.png">
+    <meta property="og:url" content="https://vxnx04.github.io/">
+    <meta name="theme-color" content="#030304">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/minigame.css">
+</head>
+
+<body>
+
+    <!-- System Boot Loader -->
+    <div id="boot-loader" class="boot-loader">
+        <div class="boot-content">
+            <div class="boot-logo">VP://</div>
+            <div id="boot-lines" class="boot-lines"></div>
+            <div class="boot-bar-track">
+                <div id="boot-bar" class="boot-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor-dot" class="cursor-dot"></div>
+    <div id="cursor-ring" class="cursor-ring"></div>
+
+    <!-- Background System -->
+    <div class="tech-grid"></div>
+
+    <!-- Floating Navigation -->
+    <nav class="nav-dock" id="nav-dock">
+        <a href="#profile" class="nav-btn" aria-label="Profile"><i data-lucide="user" class="w-5 h-5"></i></a>
+        <a href="#about" class="nav-btn" aria-label="About"><i data-lucide="heart" class="w-5 h-5"></i></a>
+        <a href="#work" class="nav-btn" aria-label="Projects"><i data-lucide="layers" class="w-5 h-5"></i></a>
+        <a href="#stack" class="nav-btn" aria-label="Tech Stack"><i data-lucide="cpu" class="w-5 h-5"></i></a>
+        <div class="w-px h-6 bg-white/10 my-auto mx-1"></div>
+        <a href="mailto:vini.gamedesigner@gmail.com" class="nav-btn" aria-label="Email"><i data-lucide="mail"
+                class="w-5 h-5"></i></a>
+        <button class="nav-btn lang-toggle" aria-label="Language" data-lang="en"><i data-lucide="languages"
+                class="w-5 h-5"></i></button>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="grid" class="grid-container spotlight-group">
+
+        <!-- Profile Section -->
+        <div id="profile"
+            class="card col-span-4 p-8 md:p-12 flex flex-col md:flex-row gap-10 items-start justify-between reveal">
+            <div class="flex-1 relative z-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <div
+                        class="px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"
+                            style="box-shadow: 0 0 8px #10b981"></div>
+                        <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold"
+                            data-i18n="status-available">Available for Work</span>
+                    </div>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tighter leading-[0.95]">
+                    <span class="text-gradient">Vinicius Passos</span>
+                </h1>
+                <h2 class="text-xl text-[#6366F1] font-medium mb-6 flex items-center gap-2">
+                    <span id="typewriter"></span><span class="typewriter-cursor">|</span>
+                </h2>
+
+                <p class="text-[var(--text-muted)] leading-relaxed max-w-xl mb-8 text-lg font-light"
+                    data-i18n="hero-desc">
+                    Game Designer & Unity Developer focused on immersive experiences for mobile and PC. Track record of
+                    launches with strong retention and fast prototyping-to-release cycles.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="mailto:vini.gamedesigner@gmail.com"
+                        class="btn-shimmer flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors shadow-lg hover:shadow-white/20"
+                        data-i18n="hero-cta-primary">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Contact Me
+                    </a>
+                    <a href="#work"
+                        class="flex items-center gap-2 px-6 py-3 border border-[var(--border-highlight)] text-white font-medium rounded-lg hover:bg-white/5 transition-colors"
+                        data-i18n="hero-cta-secondary">
+                        <i data-lucide="arrow-down" class="w-4 h-4"></i> View Projects
+                    </a>
+                </div>
+            </div>
+
+            <!-- Profile Image -->
+            <div class="flex flex-col items-center gap-4 shrink-0">
+                <div
+                    class="flex flex-col items-center justify-center w-40 h-40 border border-[var(--border-base)] rounded-2xl bg-[var(--bg-page)] relative group overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[var(--accent)] to-transparent opacity-10 rounded-2xl group-hover:opacity-20 transition-opacity">
+                    </div>
+                    <img src="images/profile.png" alt="Vinicius Passos"
+                        class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <!-- Location Tag -->
+                <div
+                    class="flex items-center gap-2 text-xs text-[var(--text-muted)] font-mono bg-[var(--bg-page)] border border-[var(--border-base)] px-3 py-1.5 rounded-full">
+                    <i data-lucide="map-pin" class="w-3 h-3 text-[var(--accent)]"></i>
+                    <span>São Paulo, Brazil <span class="text-[var(--text-dim)]">UTC-3</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="card col-span-4 p-6 reveal delay-100">
+            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-10 justify-center">
+                <span class="text-xs text-[var(--text-dim)] uppercase tracking-widest font-bold"
+                    data-i18n="social-proof-title">Worked with</span>
+                <div class="flex items-center gap-8 flex-wrap justify-center">
+                    <span class="text-sm text-[var(--text-muted)] font-medium flex items-center gap-2"><i
+                            data-lucide="building-2" class="w-4 h-4 text-[var(--accent)]"></i> Ocarina Studios</span>
+                    <span class="text-sm text-[var(--text-muted)] font-medium flex items-center gap-2"><i
+                            data-lucide="rocket" class="w-4 h-4 text-[var(--accent)]"></i> Google Indie
+                        Accelerator</span>
+                    <span class="text-sm text-[var(--text-muted)] font-medium flex items-center gap-2"><i
+                            data-lucide="graduation-cap" class="w-4 h-4 text-[var(--accent)]"></i> FAM Centro
+                        Universitário</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pocket RPG Minigame -->
+        <div class="col-span-4 reveal delay-100 relative group">
+            <!-- Game Container -->
+            <div id="minigame-container" class="minigame-container">
+                <!-- Overlay: Start Screen -->
+                <div id="game-overlay" class="game-overlay">
+                    <div id="start-title" class="game-title">Pocket RPG</div>
+                    <p id="start-desc" class="text-[var(--text-muted)] mb-8 text-sm">Defeat the Demon King on Floor 10
+                    </p>
+                    <button id="btn-start-game" class="btn-start">ENTER DUNGEON</button>
+                    <div class="mt-8 text-xs text-[var(--text-dim)] font-mono">
+                        [Q] Strike &nbsp; [W] Bash &nbsp; [E] Mend
+                    </div>
+                </div>
+
+                <!-- Overlay: Game Over / Win -->
+                <div id="game-modal" class="game-overlay hidden" style="z-index: 30;">
+                    <div id="modal-title" class="game-title text-red-500">YOU DIED</div>
+                    <p id="modal-desc" class="text-[var(--text-muted)] mb-8 text-sm">Floor 5</p>
+                    <div class="flex gap-4">
+                        <button id="btn-retry" class="btn-start bg-gray-700 hover:bg-gray-600">RETRY FLOOR</button>
+                        <button id="btn-reset" class="btn-start">NEW RUN</button>
+                    </div>
+                </div>
+
+                <!-- Header: Resources -->
+                <div class="game-header">
+                    <div class="resource-group">
+                        <div class="resource">
+                            <span class="text-[var(--rpg-accent)]">LVL</span>
+                            <span id="rpg-floor" class="text-white">FLOOR 1</span>
+                        </div>
+                    </div>
+                    <div class="resource-group">
+                        <div class="resource">
+                            <span class="text-[var(--rpg-accent)]">GOLD</span>
+                            <span id="rpg-gold" class="text-white">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Viewport: Combat -->
+                <div id="game-combat-view" class="game-viewport">
+                    <div id="rpg-floor-indicator" class="floor-indicator">Floor 1</div>
+
+                    <!-- Player -->
+                    <div id="rpg-player" class="entity player-entity">
+                        <i data-lucide="sword" class="w-12 h-12"></i>
+                        <div class="hp-bar-container">
+                            <div id="player-hp-bar" class="hp-bar-fill"></div>
+                        </div>
+                        <div id="player-hp-text" class="hp-text">100/100</div>
+                        <div class="damage-overlay"></div>
+                    </div>
+
+                    <!-- Enemy -->
+                    <div id="rpg-enemy" class="entity enemy-entity">
+                        <i data-lucide="skull" class="w-12 h-12"></i>
+                        <div class="hp-bar-container">
+                            <div id="enemy-hp-bar" class="hp-bar-fill"></div>
+                        </div>
+                        <div id="enemy-hp-text" class="hp-text">...</div>
+                    </div>
+                </div>
+
+                <!-- Viewport: Shop (Hidden) -->
+                <div id="game-shop-view" class="game-viewport hidden"
+                    style="flex-direction: column; gap: 16px; align-items: stretch; padding: 20px;">
+                    <div id="shop-title" class="text-center text-[var(--rpg-accent)] font-bold mb-2">MERCHANT</div>
+
+                    <!-- Current Stats -->
+                    <div
+                        class="flex justify-around mb-4 text-xs font-mono bg-white/5 p-2 rounded-lg border border-white/10">
+                        <div class="flex flex-col items-center">
+                            <span class="text-[var(--text-muted)]">STR</span>
+                            <span id="shop-stat-str" class="text-white font-bold text-lg">1</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="text-[var(--text-muted)]">VIT</span>
+                            <span id="shop-stat-vit" class="text-white font-bold text-lg">1</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="text-[var(--text-muted)]">DEX</span>
+                            <span id="shop-stat-dex" class="text-white font-bold text-lg">1</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 h-full">
+                        <button id="btn-buy-str" class="shop-item">
+                            <i data-lucide="sword" class="mb-2"></i>
+                            <div id="shop-desc-str" class="text-xs">STR (+4 Dmg)</div>
+                            <div class="text-[var(--rpg-accent)] text-xs mt-1" id="cost-str">50 G</div>
+                        </button>
+                        <button id="btn-buy-vit" class="shop-item">
+                            <i data-lucide="heart" class="mb-2"></i>
+                            <div id="shop-desc-vit" class="text-xs">VIT (+25 HP)</div>
+                            <div class="text-[var(--rpg-accent)] text-xs mt-1" id="cost-vit">50 G</div>
+                        </button>
+                        <button id="btn-buy-dex" class="shop-item">
+                            <i data-lucide="zap" class="mb-2"></i>
+                            <div id="shop-desc-dex" class="text-xs">DEX (+2% Crit)</div>
+                            <div class="text-[var(--rpg-accent)] text-xs mt-1" id="cost-dex">50 G</div>
+                        </button>
+                    </div>
+                    <button id="btn-next-floor"
+                        class="w-full bg-[var(--rpg-accent)] hover:bg-opacity-90 text-white rounded-lg py-3 font-bold flex items-center justify-center">
+                        <span id="btn-next-text">Next Floor</span> <i data-lucide="arrow-right"
+                            class="ml-2 w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Controls: Skills -->
+                <div id="game-controls" class="game-controls">
+                    <button id="btn-skill-1" class="action-btn" title="Strike (Q)">
+                        <i data-lucide="sword" class="action-icon text-blue-500"></i>
+                        <div class="text-[10px] font-bold">STRIKE</div>
+                        <span class="action-key">Q</span>
+                        <div class="action-cooldown"></div>
+                    </button>
+                    <button id="btn-skill-2" class="action-btn" title="Bash (W)">
+                        <i data-lucide="hammer" class="action-icon text-red-500"></i>
+                        <div class="text-[10px] font-bold">BASH</div>
+                        <span class="action-key">W</span>
+                        <div class="action-cooldown"></div>
+                    </button>
+                    <button id="btn-skill-3" class="action-btn" title="Mend (E)">
+                        <i data-lucide="heart" class="action-icon text-green-500"></i>
+                        <div class="text-[10px] font-bold">MEND</div>
+                        <span class="action-key">E</span>
+                        <div class="action-cooldown"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div id="about" class="card col-span-4 p-8 reveal delay-100">
+            <span class="section-label" data-i18n="about-title">About Me</span>
+            <div class="space-y-4 text-[var(--text-muted)] text-sm leading-relaxed">
+                <p data-i18n="about-p1">Hi! I am <strong class="text-white font-medium">Vinicius</strong>, a Game
+                    Designer and Unity Developer with 2+ years creating games and interactive experiences.</p>
+                <p data-i18n="about-p2">I believe games are the ultimate medium to tell stories and connect people. I
+                    bridge creative vision and technical execution, ensuring every mechanic serves the player
+                    experience.</p>
+                <p data-i18n="about-p3">From fast prototyping to launch, I iterate with metrics, polish UX/UI, and ship
+                    products ready to scale.</p>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-3">
+                <a href="https://github.com/user-attachments/files/25074220/Vinicius.EN.pdf" target="_blank"
+                    class="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--border-highlight)] rounded-lg text-sm text-white font-medium hover:bg-white/5 transition-colors resume-link"
+                    data-i18n="btn-resume">
+                    <i data-lucide="download" class="w-4 h-4"></i> Download Resume
+                </a>
+                <a href="https://www.linkedin.com/in/vinipassos4/" target="_blank"
+                    class="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--border-highlight)] rounded-lg text-sm text-white font-medium hover:bg-white/5 transition-colors">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                </a>
+                <a href="mailto:vini.gamedesigner@gmail.com"
+                    class="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--border-highlight)] rounded-lg text-sm text-white font-medium hover:bg-white/5 transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4"></i> Email
+                </a>
+                <a href="https://vxnx.itch.io/" target="_blank"
+                    class="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--border-highlight)] rounded-lg text-sm text-white font-medium hover:bg-white/5 transition-colors">
+                    <i data-lucide="gamepad-2" class="w-4 h-4"></i> Itch.io
+                </a>
+            </div>
+        </div>
+
+
+
+        <!-- Tech Stack -->
+        <div id="stack" class="card col-span-4 p-8 reveal delay-200">
+            <span class="section-label" data-i18n="skills-title">Skills & Tech</span>
+            <div class="space-y-4">
+                <div>
+                    <div class="text-[10px] text-[var(--text-dim)] uppercase tracking-widest mb-2 font-bold"
+                        data-i18n="skill-core">Core</div>
+                    <div class="flex flex-wrap gap-2">
+                        <div class="pill skill-pill" data-skill="game-design"><i data-lucide="target"
+                                class="w-3 h-3"></i> Game Design</div>
+                        <div class="pill skill-pill" data-skill="unity"><i data-lucide="gamepad-2" class="w-3 h-3"></i>
+                            Unity 2D/3D</div>
+                        <div class="pill skill-pill" data-skill="csharp"><i data-lucide="terminal" class="w-3 h-3"></i>
+                            C#</div>
+                        <div class="pill skill-pill" data-skill="level-design"><i data-lucide="map" class="w-3 h-3"></i>
+                            Level Design</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-[10px] text-[var(--text-dim)] uppercase tracking-widest mb-2 font-bold"
+                        data-i18n="skill-technical">Technical</div>
+                    <div class="flex flex-wrap gap-2">
+                        <div class="pill skill-pill" data-skill="scripting"><i data-lucide="code" class="w-3 h-3"></i>
+                            Gameplay Scripting</div>
+                        <div class="pill skill-pill" data-skill="uiux"><i data-lucide="layout" class="w-3 h-3"></i>
+                            UI/UX</div>
+                        <div class="pill skill-pill" data-skill="prototyping"><i data-lucide="zap" class="w-3 h-3"></i>
+                            Rapid Prototyping</div>
+                        <div class="pill skill-pill" data-skill="git"><i data-lucide="git-branch" class="w-3 h-3"></i>
+                            Git</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-[10px] text-[var(--text-dim)] uppercase tracking-widest mb-2 font-bold"
+                        data-i18n="skill-soft">Soft Skills</div>
+                    <div class="flex flex-wrap gap-2">
+                        <div class="pill"><i data-lucide="users" class="w-3 h-3"></i> Agile / Scrum</div>
+                        <div class="pill"><i data-lucide="flag" class="w-3 h-3"></i> Leadership</div>
+                        <div class="pill"><i data-lucide="clipboard" class="w-3 h-3"></i> Project Mgmt</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Divider -->
+        <div class="col-span-4 mt-12 mb-4 flex items-center gap-4 reveal">
+            <div class="h-px bg-[var(--border-base)] flex-1"></div>
+            <span class="text-[10px] font-bold text-[var(--text-dim)] uppercase tracking-widest"
+                data-i18n="experience-title">Experience</span>
+            <div class="h-px bg-[var(--border-base)] flex-1"></div>
+        </div>
+
+        <!-- Experience: Ocarina -->
+        <div class="card col-span-4 p-8 flex flex-col md:flex-row gap-12 items-start reveal">
+            <div class="flex-1">
+                <span class="section-label">Professional Experience</span>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-2 gap-2">
+                    <h3 class="text-3xl font-bold text-white" data-i18n="exp-ocarina-company">Ocarina Studios</h3>
+                    <span
+                        class="font-mono text-xs text-[var(--text-muted)] border border-[var(--border-base)] px-2 py-1 rounded"
+                        data-i18n="exp-ocarina-date">2023 — 2025</span>
+                </div>
+                <div class="text-[var(--accent)] font-medium mb-6" data-i18n="exp-ocarina-role">Game Designer Jr. &
+                    Developer</div>
+                <ul class="space-y-3 text-sm text-[var(--text-muted)] leading-relaxed">
+                    <li class="flex items-start gap-3"><i data-lucide="check-circle"
+                            class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span
+                            data-i18n="exp-ocarina-b1">Designed and developed mobile games reaching up to 40% D1
+                            retention.</span></li>
+                    <li class="flex items-start gap-3"><i data-lucide="check-circle"
+                            class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span data-i18n="exp-ocarina-b2">Led
+                            gameplay systems and UI/UX implementation in Unity.</span></li>
+                    <li class="flex items-start gap-3"><i data-lucide="check-circle"
+                            class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span
+                            data-i18n="exp-ocarina-b3">Project management and leadership of a 5-person multidisciplinary
+                            team.</span></li>
+                    <li class="flex items-start gap-3"><i data-lucide="check-circle"
+                            class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span
+                            data-i18n="exp-ocarina-b4">Project selected for the Google Indie Accelerator.</span></li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-3 w-full md:w-auto">
+                <div
+                    class="flex items-center gap-3 text-sm text-[var(--text-muted)] p-3 rounded bg-[var(--bg-page)] border border-[var(--border-base)]">
+                    <i data-lucide="users" class="w-4 h-4 text-[var(--accent)]"></i>
+                    <span data-i18n="tag-agile">Agile Leadership</span>
+                </div>
+                <div
+                    class="flex items-center gap-3 text-sm text-[var(--text-muted)] p-3 rounded bg-[var(--bg-page)] border border-[var(--border-base)]">
+                    <i data-lucide="code" class="w-4 h-4 text-[var(--accent)]"></i>
+                    <span data-i18n="tag-csharp">Unity & C# Systems</span>
+                </div>
+                <div
+                    class="flex items-center gap-3 text-sm text-[var(--text-muted)] p-3 rounded bg-[var(--bg-page)] border border-[var(--border-base)]">
+                    <i data-lucide="bar-chart" class="w-4 h-4 text-[var(--accent)]"></i>
+                    <span data-i18n="tag-analytics">Data-Driven Design</span>
+                </div>
+                <div
+                    class="flex items-center gap-3 text-sm text-[var(--text-muted)] p-3 rounded bg-[var(--bg-page)] border border-[var(--border-base)]">
+                    <i data-lucide="rocket" class="w-4 h-4 text-[var(--accent)]"></i>
+                    <span data-i18n="tag-prototyping">Rapid Prototyping</span>
+                </div>
+                <div
+                    class="flex items-center gap-3 text-sm text-[var(--text-muted)] p-3 rounded bg-[var(--bg-page)] border border-[var(--border-base)]">
+                    <i data-lucide="gamepad" class="w-4 h-4 text-[var(--accent)]"></i>
+                    <span data-i18n="tag-mechanics">Gameplay Mechanics</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="card col-span-4 p-8 reveal delay-200 overflow-hidden relative">
+            <span class="section-label" data-i18n="education-title">Education</span>
+
+            <!-- Horizontal Timeline Container -->
+            <div class="mt-8 relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-[14px] left-0 right-0 h-[2px] bg-[var(--border-base)] z-0">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 relative z-10">
+
+                    <!-- 1. Degree -->
+                    <div class="relative pl-8 md:pl-0 md:pt-8 group">
+                        <!-- Dot -->
+                        <div class="timeline-dot absolute left-0 top-1.5 md:left-1/2 md:-top-1.5 md:-translate-x-1/2">
+                        </div>
+
+                        <div class="md:text-center text-sm">
+                            <span class="font-mono text-xs text-[var(--text-dim)] block mb-1">2021 — 2023</span>
+                            <h4 class="font-bold text-white mb-1" data-i18n="edu-degree-role">Digital Games Degree</h4>
+                            <p class="text-xs text-[var(--accent)] mb-2" data-i18n="edu-degree-inst">FAM University
+                                Center</p>
+                            <p class="text-xs text-[var(--text-muted)] leading-relaxed max-w-xs md:mx-auto"
+                                data-i18n="edu-degree-desc1">Technologist Degree in Digital Games. Developed "Memories
+                                of a Scattered Mind".</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. MBA -->
+                    <div class="relative pl-8 md:pl-0 md:pt-8 group">
+                        <!-- Connecting Line (Mobile) -->
+                        <div class="md:hidden absolute left-[5px] -top-8 bottom-4 w-[2px] bg-[var(--border-base)]">
+                        </div>
+                        <!-- Dot -->
+                        <div class="timeline-dot absolute left-0 top-1.5 md:left-1/2 md:-top-1.5 md:-translate-x-1/2">
+                        </div>
+
+                        <div class="md:text-center text-sm">
+                            <span class="font-mono text-xs text-[var(--text-dim)] block mb-1">2025 — 2026</span>
+                            <h4 class="font-bold text-white mb-1" data-i18n="edu-mba-title">MBA Game Design</h4>
+                            <p class="text-xs text-[var(--accent)] mb-2">UNINTER</p>
+                            <p class="text-xs text-[var(--text-muted)] leading-relaxed max-w-xs md:mx-auto"
+                                data-i18n="edu-mba-desc-short">Specialization in leadership, innovation, and emerging
+                                tech (VR/AR, AI) for games.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Neuroscience -->
+                    <div class="relative pl-8 md:pl-0 md:pt-8 group">
+                        <!-- Connecting Line (Mobile) -->
+                        <div class="md:hidden absolute left-[5px] -top-8 bottom-0 w-[2px] bg-[var(--border-base)]">
+                        </div>
+                        <!-- Dot -->
+                        <div
+                            class="timeline-dot active absolute left-0 top-1.5 md:left-1/2 md:-top-1.5 md:-translate-x-1/2">
+                        </div>
+
+                        <div class="md:text-center text-sm">
+                            <span class="font-mono text-xs text-[var(--accent)] block mb-1">2026 (In Progress)</span>
+                            <h4 class="font-bold text-white mb-1" data-i18n="edu-neuro-title-short">Neuroscience &
+                                Physics of Consciousness</h4>
+                            <p class="text-xs text-[var(--accent)] mb-2">UNINTER</p>
+                            <p class="text-xs text-[var(--text-muted)] leading-relaxed max-w-xs md:mx-auto"
+                                data-i18n="edu-neuro-desc">Study of cognitive processes and decision-making to enhance
+                                interactive experiences.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Divider -->
+        <div id="work" class="col-span-4 mt-12 mb-4 flex items-center gap-4 reveal">
+            <div class="h-px bg-[var(--border-base)] flex-1"></div>
+            <span class="text-[10px] font-bold text-[var(--text-dim)] uppercase tracking-widest"
+                data-i18n="projects-title">Featured Projects</span>
+            <div class="h-px bg-[var(--border-base)] flex-1"></div>
+        </div>
+
+        <!-- Project: Dream QuiZzz -->
+        <div class="card project-card col-span-4 md:col-span-2 p-0 group reveal delay-100"
+            data-skills="unity,csharp,game-design,uiux,scripting">
+            <div class="img-placeholder">
+                <img src="images/games/dream-quizzz.png" alt="Dream QuiZzz" class="w-full h-full object-cover">
+            </div>
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-[var(--accent)] font-bold"
+                            data-i18n="proj-dq-cat">Puzzle Adventure</span>
+                        <h3
+                            class="text-2xl font-bold text-white mt-1 group-hover:text-[var(--accent)] transition-colors">
+                            Dream QuiZzz</h3>
+                    </div>
+                    <a href="games/dream-quizzz.html"
+                        class="text-[var(--text-dim)] hover:text-white transition-colors"><i data-lucide="external-link"
+                            class="w-5 h-5"></i></a>
+                </div>
+                <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="proj-dq-desc">Adventure game
+                    with a unique art style and trivia elements. Built for mobile with focus on retention and
+                    engagement.</p>
+
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="pill">Unity</span>
+                    <span class="pill">C#</span>
+                    <span class="pill">Mobile</span>
+                    <span class="pill">40% D1</span>
+                </div>
+                <a href="games/dream-quizzz.html"
+                    class="mt-6 inline-flex items-center gap-2 text-sm text-[var(--accent)] hover:text-white transition-colors font-medium"
+                    data-i18n="project-btn-details">
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i> View Details
+                </a>
+            </div>
+        </div>
+
+        <!-- Project: Mysterious Restaurant -->
+        <div class="card project-card col-span-4 md:col-span-2 p-0 group reveal delay-200"
+            data-skills="unity,csharp,game-design,uiux,scripting">
+            <div class="img-placeholder">
+                <img src="images/games/mysterious-restaurant.png" alt="Mysterious Restaurant"
+                    class="w-full h-full object-cover">
+            </div>
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-[var(--accent)] font-bold"
+                            data-i18n="proj-mr-cat">Simulation / Merge</span>
+                        <h3
+                            class="text-2xl font-bold text-white mt-1 group-hover:text-[var(--accent)] transition-colors">
+                            Mysterious Restaurant</h3>
+                    </div>
+                    <a href="games/mysterious-restaurant.html"
+                        class="text-[var(--text-dim)] hover:text-white transition-colors"><i data-lucide="external-link"
+                            class="w-5 h-5"></i></a>
+                </div>
+                <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="proj-mr-desc">Cozy
+                    restaurant simulation with Match3 and Merge elements. Led as Game Designer and Developer.</p>
+
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="pill">Unity</span>
+                    <span class="pill">C#</span>
+                    <span class="pill">Mobile</span>
+                    <span class="pill">Team Lead</span>
+                </div>
+                <a href="games/mysterious-restaurant.html"
+                    class="mt-6 inline-flex items-center gap-2 text-sm text-[var(--accent)] hover:text-white transition-colors font-medium"
+                    data-i18n="project-btn-details">
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i> View Details
+                </a>
+            </div>
+        </div>
+
+        <!-- Project: Memories -->
+        <div class="card project-card col-span-4 p-0 group reveal delay-100"
+            data-skills="unity,csharp,game-design,level-design,scripting">
+            <div class="flex flex-col md:flex-row">
+                <div class="img-placeholder md:w-1/2 md:aspect-auto md:min-h-[300px]">
+                    <img src="images/games/memories-scattered-mind.png" alt="Memories of a Scattered Mind"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-center">
+                    <span class="text-[10px] uppercase tracking-widest text-[var(--accent)] font-bold"
+                        data-i18n="proj-mem-cat">Psychological Horror</span>
+                    <h3
+                        class="text-3xl font-bold text-white mt-2 mb-4 group-hover:text-[var(--accent)] transition-colors">
+                        Memories of a Scattered Mind</h3>
+                    <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="proj-mem-desc">
+                        Experimental narrative horror game exploring memory and perception. Awarded graduation project.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="pill">Unity 3D</span>
+                        <span class="pill">C#</span>
+                        <span class="pill">PC</span>
+                        <span class="pill">Graduation</span>
+                    </div>
+                    <a href="games/memories.html"
+                        class="inline-flex items-center gap-2 text-sm text-[var(--accent)] hover:text-white transition-colors font-medium"
+                        data-i18n="project-btn-details">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i> View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Itch.io CTA -->
+        <div class="col-span-4 flex justify-center reveal">
+            <a href="https://vxnx.itch.io/" target="_blank"
+                class="flex items-center gap-2 px-6 py-3 border border-[var(--border-highlight)] text-white font-medium rounded-lg hover:bg-white/5 transition-colors"
+                data-i18n="projects-cta">
+                <i data-lucide="gamepad-2" class="w-4 h-4"></i> See More Projects on Itch.io
+            </a>
+        </div>
+
+        <!-- Contact Divider -->
+        <div id="contact" class="col-span-4 mt-12 mb-4 flex items-center gap-4 reveal">
+            <div class="h-px bg-[var(--border-base)] flex-1"></div>
+            <span class="text-[10px] font-bold text-[var(--text-dim)] uppercase tracking-widest"
+                data-i18n="contact-title">Let's Connect</span>
+            <div class="h-px bg-[var(--border-base)] flex-1"></div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="card col-span-4 p-8 md:p-12 reveal">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="flex-1">
+                    <p class="text-lg text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="contact-text">Interested
+                        in collaborating or have a project in mind? I am available for full-time roles or freelance
+                        projects.</p>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                        <span class="text-sm text-emerald-400 font-medium" data-i18n="contact-availability">Available
+                            for freelance and full-time</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3 w-full md:w-auto">
+                    <a href="mailto:vini.gamedesigner@gmail.com"
+                        class="flex items-center gap-3 px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        <span data-i18n="contact-btn-email">Send Email</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vinipassos4/" target="_blank"
+                        class="flex items-center gap-3 px-6 py-3 border border-[var(--border-highlight)] text-white font-medium rounded-lg hover:bg-white/5 transition-colors text-sm">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        <span data-i18n="contact-linkedin-text">LinkedIn</span>
+                    </a>
+                    <a href="https://vxnx.itch.io/" target="_blank"
+                        class="flex items-center gap-3 px-6 py-3 border border-[var(--border-highlight)] text-white font-medium rounded-lg hover:bg-white/5 transition-colors text-sm">
+                        <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+                        <span data-i18n="contact-itch-text">Itch.io</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="text-center text-xs text-[var(--text-dim)] pb-32 font-mono">
+        © <span id="year"></span> Vinicius Passos // <span data-i18n="footer-credit">Designed & Built by VXNX</span>
+    </footer>
+
+    <script src="js/minigame.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Portfolio | Vinicius Passos</title>
+    <meta name="description"
+        content="Web portfolio by Vinicius Passos. Professional websites designed and developed for businesses and creators.">
+    <meta property="og:title" content="Vinicius Passos | Web Portfolio">
+    <meta property="og:description"
+        content="Professional websites designed and developed by Vinicius Passos for businesses and creators.">
+    <meta property="og:image" content="images/profile.png">
+    <meta property="og:url" content="https://vxnx04.github.io/websites.html">
+    <meta name="theme-color" content="#030304">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Background System -->
+    <div class="tech-grid"></div>
+
+    <!-- Floating Navigation -->
+    <nav class="nav-dock" id="nav-dock">
+        <a href="index.html#profile" class="nav-btn" aria-label="Home"><i data-lucide="home" class="w-5 h-5"></i></a>
+        <a href="index.html#work" class="nav-btn" aria-label="Games"><i data-lucide="gamepad-2" class="w-5 h-5"></i></a>
+        <div class="w-px h-6 bg-white/10 my-auto mx-1"></div>
+        <a href="mailto:vini.gamedesigner@gmail.com" class="nav-btn" aria-label="Email"><i data-lucide="mail"
+                class="w-5 h-5"></i></a>
+        <button class="nav-btn lang-toggle" aria-label="Language" data-lang="en"><i data-lucide="languages"
+                class="w-5 h-5"></i></button>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="grid" class="grid-container spotlight-group">
+
+        <!-- HERO -->
+        <div class="card col-span-4 p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center justify-between reveal">
+            <div class="flex-1 relative z-10">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="px-3 py-1 rounded-full border border-[var(--accent-secondary)]/20 bg-[var(--accent-secondary)]/10 flex items-center gap-2">
+                        <i data-lucide="globe" class="w-3 h-3 text-[var(--accent-secondary)]"></i>
+                        <span
+                            class="text-[10px] font-mono text-[var(--accent-secondary)] uppercase tracking-widest font-bold"
+                            data-i18n="web-list-title">Web Portfolio</span>
+                    </div>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tighter leading-[0.95]">
+                    <span class="text-gradient" data-i18n="web-hero-title">Design & Development</span>
+                </h1>
+
+                <p class="text-[var(--text-muted)] leading-relaxed max-w-xl mb-8 text-lg font-light"
+                    data-i18n="web-hero-desc">
+                    A selection of websites I designed and developed, aligning branding, copy, and performance for
+                    businesses and creators.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="mailto:vini.gamedesigner@gmail.com?subject=Novo%20site"
+                        class="flex items-center gap-2 px-6 py-3 bg-[var(--accent-secondary)] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-lg"
+                        data-i18n="web-hero-cta">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Request a Website
+                    </a>
+                    <a href="index.html#work"
+                        class="flex items-center gap-2 px-6 py-3 border border-[var(--border-highlight)] text-white font-medium rounded-lg hover:bg-white/5 transition-colors"
+                        data-i18n="web-hero-back">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Portfolio
+                    </a>
+                </div>
+            </div>
+
+            <!-- VP Badge -->
+            <div
+                class="hidden md:flex flex-col items-center justify-center w-40 h-40 border border-[var(--border-base)] rounded-2xl bg-[var(--bg-page)] relative group shrink-0 overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-[var(--accent-secondary)] to-transparent opacity-10 rounded-2xl group-hover:opacity-20 transition-opacity">
+                </div>
+                <i data-lucide="code"
+                    class="w-12 h-12 text-[var(--accent-secondary)] group-hover:scale-110 transition-transform duration-300"></i>
+                <span
+                    class="text-[10px] font-mono text-[var(--text-dim)] mt-3 uppercase tracking-widest group-hover:text-[var(--accent-secondary)] transition-colors">Web
+                    Dev</span>
+            </div>
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="col-span-4 mt-8 mb-4 flex items-center gap-4 reveal">
+            <div class="h-px bg-[var(--border-base)] flex-1"></div>
+            <span class="text-[10px] font-bold text-[var(--text-dim)] uppercase tracking-widest"
+                data-i18n="web-list-title">Web Portfolio</span>
+            <div class="h-px bg-[var(--border-base)] flex-1"></div>
+        </div>
+
+        <!-- WEBSITE: Fazotu -->
+        <div class="card col-span-4 md:col-span-2 p-8 group reveal delay-100">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <span class="text-[10px] uppercase tracking-widest text-[var(--accent-secondary)] font-bold"
+                        data-i18n="web-fazotu-cat">National Logistics</span>
+                    <h3
+                        class="text-xl font-bold text-white mt-1 group-hover:text-[var(--accent-secondary)] transition-colors">
+                        Fazotu Transportes</h3>
+                </div>
+                <a href="https://fazotutransportes.com.br/" target="_blank" rel="noopener noreferrer"
+                    class="text-[var(--text-dim)] hover:text-white transition-colors"><i data-lucide="external-link"
+                        class="w-5 h-5"></i></a>
+            </div>
+            <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="web-fazotu-desc">Corporate site
+                for a nationwide logistics company, highlighting credibility, licenses, and B2B lead capture.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="pill">UX Copy</span>
+                <span class="pill">SEO</span>
+                <span class="pill">Multi-section</span>
+            </div>
+        </div>
+
+        <!-- WEBSITE: CRSP -->
+        <div class="card col-span-4 md:col-span-2 p-8 group reveal delay-200">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <span class="text-[10px] uppercase tracking-widest text-[var(--accent-secondary)] font-bold"
+                        data-i18n="web-crsp-cat">Law Firm</span>
+                    <h3
+                        class="text-xl font-bold text-white mt-1 group-hover:text-[var(--accent-secondary)] transition-colors">
+                        CRSP Advogados</h3>
+                </div>
+                <a href="https://crspadvogados.com/" target="_blank" rel="noopener noreferrer"
+                    class="text-[var(--text-dim)] hover:text-white transition-colors"><i data-lucide="external-link"
+                        class="w-5 h-5"></i></a>
+            </div>
+            <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="web-crsp-desc">Legal services
+                landing with trust signals, testimonials, and quick consultation CTAs via WhatsApp.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="pill">Branding</span>
+                <span class="pill">Conversion</span>
+                <span class="pill">Mobile-first</span>
+            </div>
+        </div>
+
+        <!-- WEBSITE: Rige04 -->
+        <div class="card col-span-4 md:col-span-2 p-8 group reveal delay-100">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <span class="text-[10px] uppercase tracking-widest text-[var(--accent-secondary)] font-bold"
+                        data-i18n="web-rige-cat">Illustration Portfolio</span>
+                    <h3
+                        class="text-xl font-bold text-white mt-1 group-hover:text-[var(--accent-secondary)] transition-colors">
+                        Rige04 Portfolio</h3>
+                </div>
+                <a href="https://rige04.github.io/" target="_blank" rel="noopener noreferrer"
+                    class="text-[var(--text-dim)] hover:text-white transition-colors"><i data-lucide="external-link"
+                        class="w-5 h-5"></i></a>
+            </div>
+            <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="web-rige-desc">Bilingual
+                portfolio for a freelance illustrator, highlighting commissions, socials, and terms of service.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="pill">Bilingual</span>
+                <span class="pill">Illustration</span>
+                <span class="pill">Social CTA</span>
+            </div>
+        </div>
+
+        <!-- CTA CARD -->
+        <div
+            class="card col-span-4 md:col-span-2 p-8 flex flex-col justify-center items-center text-center reveal delay-200">
+            <i data-lucide="plus" class="w-10 h-10 text-[var(--text-dim)] mb-4"></i>
+            <h3 class="text-lg font-bold text-white mb-2" data-i18n="web-contact-title">Ready for a new website?</h3>
+            <p class="text-sm text-[var(--text-muted)] mb-4" data-i18n="web-contact-text">Let's discuss your web
+                project—identity, copy, SEO, and performance tailored to your business.</p>
+            <a href="mailto:vini.gamedesigner@gmail.com?subject=Novo%20site"
+                class="inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--accent-secondary)] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity text-sm"
+                data-i18n="web-hero-cta">
+                <i data-lucide="mail" class="w-4 h-4"></i> Request a Website
+            </a>
+        </div>
+
+        <!-- CONTACT DIVIDER -->
+        <div class="col-span-4 mt-12 mb-4 flex items-center gap-4 reveal">
+            <div class="h-px bg-[var(--border-base)] flex-1"></div>
+            <span class="text-[10px] font-bold text-[var(--text-dim)] uppercase tracking-widest"
+                data-i18n="contact-title">Let's Connect</span>
+            <div class="h-px bg-[var(--border-base)] flex-1"></div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="card col-span-4 p-8 md:p-12 reveal">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="flex-1">
+                    <p class="text-lg text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="contact-text">Interested
+                        in collaborating or have a project in mind? I am available for full-time roles or freelance
+                        projects.</p>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                        <span class="text-sm text-emerald-400 font-medium" data-i18n="contact-availability">Available
+                            for freelance and full-time</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3 w-full md:w-auto">
+                    <a href="mailto:vini.gamedesigner@gmail.com"
+                        class="flex items-center gap-3 px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        <span data-i18n="contact-btn-email">Send Email</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vinipassos4/" target="_blank"
+                        class="flex items-center gap-3 px-6 py-3 border border-[var(--border-highlight)] text-white font-medium rounded-lg hover:bg-white/5 transition-colors text-sm">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        <span data-i18n="contact-linkedin-text">LinkedIn</span>
+                    </a>
+                    <a href="https://vxnx.itch.io/" target="_blank"
+                        class="flex items-center gap-3 px-6 py-3 border border-[var(--border-highlight)] text-white font-medium rounded-lg hover:bg-white/5 transition-colors text-sm">
+                        <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+                        <span data-i18n="contact-itch-text">Itch.io</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="text-center text-xs text-[var(--text-dim)] pb-8 font-mono">
+        © <span id="year"></span> Vinicius Passos // <span data-i18n="footer-credit">Designed & Built by VXNX</span>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

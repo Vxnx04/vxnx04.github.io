@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Server Error | Vinicius Passos</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body
+    class="bg-[var(--bg-page)] text-[var(--text-main)] font-['Inter'] flex items-center justify-center min-h-screen relative overflow-hidden">
+
+    <div class="tech-grid"></div>
+
+    <div class="text-center p-8 max-w-lg relative z-10 px-4">
+        <h1 class="text-8xl md:text-9xl font-bold text-red-500 mb-2 font-['Space_Grotesk'] tracking-tighter">500</h1>
+        <h2 class="text-2xl font-bold text-white mb-6">Internal Server Error</h2>
+
+        <p class="text-[var(--text-muted)] mb-8 leading-relaxed">
+            Oops! Something went wrong on our end. We're working to fix it.
+        </p>
+
+        <a href="index.html"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-[var(--accent)] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-500/20">
+            <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Reload Page
+        </a>
+
+        <div class="mt-8 pt-8 border-t border-[var(--border-base)] text-sm text-[var(--text-dim)]">
+            If the problem persists, please contact me at:<br>
+            <a href="mailto:vini.gamedesigner@gmail.com"
+                class="text-[var(--accent)] hover:underline">vini.gamedesigner@gmail.com</a>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

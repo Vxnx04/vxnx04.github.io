@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream QuiZzz | Vinicius Passos</title>
+    <meta name="description"
+        content="Dream QuiZzz — A trivia adventure game built for mobile with focus on retention and engagement.">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="tech-grid"></div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor-dot" class="cursor-dot"></div>
+    <div id="cursor-ring" class="cursor-ring"></div>
+
+    <!-- Nav Dock -->
+    <nav class="nav-dock" id="nav-dock">
+        <a href="../index.html#profile" class="nav-btn" aria-label="Home"><i data-lucide="home" class="w-5 h-5"></i></a>
+        <a href="../index.html#work" class="nav-btn" aria-label="Projects"><i data-lucide="layers"
+                class="w-5 h-5"></i></a>
+        <div class="w-px h-6 bg-white/10 my-auto mx-1"></div>
+        <a href="mailto:vini.gamedesigner@gmail.com" class="nav-btn" aria-label="Email"><i data-lucide="mail"
+                class="w-5 h-5"></i></a>
+        <button class="nav-btn lang-toggle" aria-label="Language" data-lang="en"><i data-lucide="languages"
+                class="w-5 h-5"></i></button>
+    </nav>
+
+    <div id="grid" class="grid-container spotlight-group">
+
+        <!-- Back Link -->
+        <div class="col-span-4">
+            <a href="../index.html#work" class="back-link" data-i18n="back-to-games">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> ← Back to Games
+            </a>
+        </div>
+
+        <!-- Hero Card -->
+        <div class="card col-span-4 p-0 reveal">
+            <!-- Video -->
+            <div class="game-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/O7ezyZuv9Nw" title="Dream QuiZzz Game Trailer"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="p-8 md:p-10">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="pill" data-i18n="platform-mobile">Mobile</span>
+                            <span class="pill" style="border-color: rgba(16,185,129,0.3); color: #10b981;"
+                                data-i18n="status-released">Released</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-gradient tracking-tighter">Dream QuiZzz</h1>
+                    </div>
+                    <a href="https://apkpure.com/br/dream-quizzz-adventure-trivia/com.ocarina.dreamquiz" target="_blank"
+                        rel="noopener noreferrer" class="play-btn" data-i18n="play-btn-play">
+                        <i data-lucide="play" class="w-5 h-5"></i> Play Game
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="card col-span-4 md:col-span-3 p-8 reveal delay-100">
+            <div class="game-section">
+                <h2 data-i18n="game-about-title">About the Game</h2>
+                <p data-i18n="dq-about-desc">Set in a mysterious dream world where knowledge fuels progress, players
+                    must answer trivia questions to move closer to the End Portal. The journey is non-linear, with
+                    branching paths and escalating difficulty, encouraging strategic thinking and exploration. As
+                    players progress, they gradually restore a shattered utopia of knowledge by rebuilding parts of the
+                    Dream World.</p>
+            </div>
+        </div>
+
+        <!-- Role -->
+        <div class="card col-span-4 md:col-span-1 p-8 reveal delay-200">
+            <div class="game-section">
+                <h2 data-i18n="role-title">My Role</h2>
+                <ul>
+                    <li data-i18n="role-gd">Game Designer</li>
+                    <li data-i18n="role-unity">Unity Developer</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Responsibilities -->
+        <div class="card col-span-4 md:col-span-2 p-8 reveal delay-100">
+            <div class="game-section">
+                <h2 data-i18n="resp-title">Responsibilities</h2>
+                <ul>
+                    <li data-i18n="dq-resp-1">Designed core gameplay mechanics combining trivia and adventure, balancing
+                        challenge, pacing, and player flow</li>
+                    <li data-i18n="dq-resp-2">Implemented core systems and UI/UX in Unity, including quiz logic,
+                        progression, stage navigation, and feedback animations</li>
+                    <li data-i18n="dq-resp-3">Maintained game design documentation, ensuring consistent vision, clear
+                        communication, and scope management</li>
+                    <li data-i18n="dq-resp-4">Led and participated in regular playtests, collecting qualitative feedback
+                        and iterating on gameplay and UX</li>
+                    <li data-i18n="dq-resp-5">Monitored analytics data (Firebase) to support data-driven design
+                        decisions and measure retention and drop-off points</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tech -->
+        <div class="card col-span-4 md:col-span-2 p-8 reveal delay-200">
+            <div class="game-section">
+                <h2 data-i18n="tech-title">Technologies Used</h2>
+                <ul>
+                    <li data-i18n="dq-tech-1">Unity Engine (2D & UI systems)</li>
+                    <li data-i18n="dq-tech-2">C# (scripting gameplay, UI logic, and game flow)</li>
+                    <li data-i18n="dq-tech-3">Figma (UI wireframes, flowcharts, and mockups)</li>
+                    <li data-i18n="dq-tech-4">Firebase (Remote Config, Analytics)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Journey -->
+        <div class="card col-span-4 p-8 reveal">
+            <div class="game-section">
+                <h2 data-i18n="journey-title">Development Journey</h2>
+                <p data-i18n="dq-journey-p">Creating Dream Quizzz was a deep dive into hybrid gameplay design, blending
+                    trivia mechanics with adventure-style progression. This required rapid prototyping, player feedback
+                    loops, and cross-functional collaboration.</p>
+                <ul class="mt-4">
+                    <li data-i18n="dq-journey-1">Finding the right balance between player agency and trivia flow was
+                        challenging. We prototyped multiple interaction models and tested them with real players to
+                        create an engaging experience that maintains the excitement of both genres.</li>
+                    <li data-i18n="dq-journey-2">The importance of mobile-first design became clear as we focused on
+                        one-handed usability and intuitive question delivery. We learned to prioritize user experience
+                        while maintaining the game's core mechanics.</li>
+                    <li data-i18n="dq-journey-3">We implemented a dynamic difficulty system that adapts to player
+                        performance, ensuring a challenging yet fair experience. The system uses Firebase Analytics to
+                        track player behavior and adjust question difficulty accordingly.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="text-center text-xs text-[var(--text-dim)] pb-8 font-mono">
+        © <span id="year"></span> Vinicius Passos // <span data-i18n="footer-credit">Designed & Built by VXNX</span>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
