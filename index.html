@@ -92,11 +92,24 @@
                     <span id="typewriter"></span><span class="typewriter-cursor">|</span>
                 </h2>
 
-                <p class="text-[var(--text-muted)] leading-relaxed max-w-xl mb-8 text-lg font-light"
+                <p class="text-[var(--text-muted)] leading-relaxed max-w-xl mb-6 text-lg font-light"
                     data-i18n="hero-desc">
-                    Game Designer & Unity Developer focused on immersive experiences for mobile and PC. Track record of
+                    Game Designer & Unity Developer focused on immersive experiences. Track record of
                     launches with strong retention and fast prototyping-to-release cycles.
                 </p>
+
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <div
+                        class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-xs font-medium text-purple-300">
+                        <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+                        <span data-i18n="hero-badge-mba">MBA Game Design</span>
+                    </div>
+                    <div
+                        class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-xs font-medium text-blue-300">
+                        <i data-lucide="rocket" class="w-3.5 h-3.5"></i>
+                        <span data-i18n="hero-badge-google">Google Indie Accelerator Alumni</span>
+                    </div>
+                </div>
 
                 <div class="flex flex-wrap gap-4">
                     <a href="mailto:vini.gamedesigner@gmail.com"
@@ -104,6 +117,11 @@
                         data-i18n="hero-cta-primary">
                         <i data-lucide="mail" class="w-4 h-4"></i> Contact Me
                     </a>
+                    <button id="btn-play-rpg"
+                        class="flex items-center gap-2 px-6 py-3 border border-[var(--border-highlight)] text-white font-medium rounded-lg hover:bg-white/5 transition-colors">
+                        <i data-lucide="sword" class="w-4 h-4"></i> <span data-i18n="hero-play-rpg">Play Pocket
+                            RPG</span>
+                    </button>
                     <a href="#work"
                         class="flex items-center gap-2 px-6 py-3 border border-[var(--border-highlight)] text-white font-medium rounded-lg hover:bg-white/5 transition-colors"
                         data-i18n="hero-cta-secondary">
@@ -131,26 +149,10 @@
             </div>
         </div>
 
-        <!-- Social Proof -->
-        <div class="card col-span-4 p-6 reveal delay-100">
-            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-10 justify-center">
-                <span class="text-xs text-[var(--text-dim)] uppercase tracking-widest font-bold"
-                    data-i18n="social-proof-title">Worked with</span>
-                <div class="flex items-center gap-8 flex-wrap justify-center">
-                    <span class="text-sm text-[var(--text-muted)] font-medium flex items-center gap-2"><i
-                            data-lucide="building-2" class="w-4 h-4 text-[var(--accent)]"></i> Ocarina Studios</span>
-                    <span class="text-sm text-[var(--text-muted)] font-medium flex items-center gap-2"><i
-                            data-lucide="rocket" class="w-4 h-4 text-[var(--accent)]"></i> Google Indie
-                        Accelerator</span>
-                    <span class="text-sm text-[var(--text-muted)] font-medium flex items-center gap-2"><i
-                            data-lucide="graduation-cap" class="w-4 h-4 text-[var(--accent)]"></i> FAM Centro
-                        Universitário</span>
-                </div>
-            </div>
-        </div>
+
 
         <!-- Pocket RPG Minigame -->
-        <div class="col-span-4 reveal delay-100 relative group">
+        <div id="minigame-section" class="col-span-4 reveal delay-100 relative group hidden">
             <!-- Game Container -->
             <div id="minigame-container" class="minigame-container">
                 <!-- Overlay: Start Screen -->
@@ -282,6 +284,15 @@
                     </button>
                 </div>
             </div>
+        </div>
+
+        <!-- Crown State (Hidden by default) -->
+        <div id="rpg-crown-state"
+            class="hidden absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-black/80 to-black/95 rounded-xl border border-yellow-500/30 backdrop-blur-sm z-20">
+            <i data-lucide="crown"
+                class="w-24 h-24 text-yellow-400 animate-pulse drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]"></i>
+            <h3 class="text-2xl font-bold text-yellow-100 mt-4 mb-2">Champion of the Dungeon</h3>
+            <p class="text-yellow-500/80 font-mono text-sm">Floor 10 Cleared</p>
         </div>
 
         <!-- About Section -->
@@ -511,7 +522,9 @@
         </div>
 
         <!-- Project: Dream QuiZzz -->
-        <div class="card project-card col-span-4 md:col-span-2 p-0 group reveal delay-100"
+        <!-- Project: Dream QuiZzz -->
+        <a href="games/dream-quizzz.html"
+            class="card project-card col-span-4 md:col-span-2 p-0 group reveal delay-100 block"
             data-skills="unity,csharp,game-design,uiux,scripting">
             <div class="img-placeholder">
                 <img src="images/games/dream-quizzz.png" alt="Dream QuiZzz" class="w-full h-full object-cover">
@@ -525,9 +538,8 @@
                             class="text-2xl font-bold text-white mt-1 group-hover:text-[var(--accent)] transition-colors">
                             Dream QuiZzz</h3>
                     </div>
-                    <a href="games/dream-quizzz.html"
-                        class="text-[var(--text-dim)] hover:text-white transition-colors"><i data-lucide="external-link"
-                            class="w-5 h-5"></i></a>
+                    <div class="text-[var(--text-dim)] group-hover:text-white transition-colors"><i
+                            data-lucide="external-link" class="w-5 h-5"></i></div>
                 </div>
                 <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="proj-dq-desc">Adventure game
                     with a unique art style and trivia elements. Built for mobile with focus on retention and
@@ -539,16 +551,17 @@
                     <span class="pill">Mobile</span>
                     <span class="pill">40% D1</span>
                 </div>
-                <a href="games/dream-quizzz.html"
-                    class="mt-6 inline-flex items-center gap-2 text-sm text-[var(--accent)] hover:text-white transition-colors font-medium"
+                <div class="mt-6 inline-flex items-center gap-2 text-sm text-[var(--accent)] group-hover:text-white transition-colors font-medium"
                     data-i18n="project-btn-details">
                     <i data-lucide="arrow-right" class="w-4 h-4"></i> View Details
-                </a>
+                </div>
             </div>
-        </div>
+        </a>
 
         <!-- Project: Mysterious Restaurant -->
-        <div class="card project-card col-span-4 md:col-span-2 p-0 group reveal delay-200"
+        <!-- Project: Mysterious Restaurant -->
+        <a href="games/mysterious-restaurant.html"
+            class="card project-card col-span-4 md:col-span-2 p-0 group reveal delay-200 block"
             data-skills="unity,csharp,game-design,uiux,scripting">
             <div class="img-placeholder">
                 <img src="images/games/mysterious-restaurant.png" alt="Mysterious Restaurant"
@@ -563,9 +576,8 @@
                             class="text-2xl font-bold text-white mt-1 group-hover:text-[var(--accent)] transition-colors">
                             Mysterious Restaurant</h3>
                     </div>
-                    <a href="games/mysterious-restaurant.html"
-                        class="text-[var(--text-dim)] hover:text-white transition-colors"><i data-lucide="external-link"
-                            class="w-5 h-5"></i></a>
+                    <div class="text-[var(--text-dim)] group-hover:text-white transition-colors"><i
+                            data-lucide="external-link" class="w-5 h-5"></i></div>
                 </div>
                 <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="proj-mr-desc">Cozy
                     restaurant simulation with Match3 and Merge elements. Led as Game Designer and Developer.</p>
@@ -576,16 +588,16 @@
                     <span class="pill">Mobile</span>
                     <span class="pill">Team Lead</span>
                 </div>
-                <a href="games/mysterious-restaurant.html"
-                    class="mt-6 inline-flex items-center gap-2 text-sm text-[var(--accent)] hover:text-white transition-colors font-medium"
+                <div class="mt-6 inline-flex items-center gap-2 text-sm text-[var(--accent)] group-hover:text-white transition-colors font-medium"
                     data-i18n="project-btn-details">
                     <i data-lucide="arrow-right" class="w-4 h-4"></i> View Details
-                </a>
+                </div>
             </div>
-        </div>
+        </a>
 
         <!-- Project: Memories -->
-        <div class="card project-card col-span-4 p-0 group reveal delay-100"
+        <!-- Project: Memories -->
+        <a href="games/memories.html" class="card project-card col-span-4 p-0 group reveal delay-100 block"
             data-skills="unity,csharp,game-design,level-design,scripting">
             <div class="flex flex-col md:flex-row">
                 <div class="img-placeholder md:w-1/2 md:aspect-auto md:min-h-[300px]">
@@ -607,14 +619,83 @@
                         <span class="pill">PC</span>
                         <span class="pill">Graduation</span>
                     </div>
-                    <a href="games/memories.html"
-                        class="inline-flex items-center gap-2 text-sm text-[var(--accent)] hover:text-white transition-colors font-medium"
+                    <div class="inline-flex items-center gap-2 text-sm text-[var(--accent)] group-hover:text-white transition-colors font-medium"
                         data-i18n="project-btn-details">
                         <i data-lucide="arrow-right" class="w-4 h-4"></i> View Details
-                    </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </a>
+
+        <!-- Project: Pong StudyProject -->
+        <!-- Project: Pong StudyProject -->
+        <a href="games/pong.html" class="card project-card col-span-4 md:col-span-2 p-0 group reveal delay-200 block"
+            data-skills="unity,csharp,scripting">
+            <div class="img-placeholder">
+                <img src="images/games/pong.png" alt="Pong StudyProject" class="w-full h-full object-cover">
+            </div>
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-[var(--accent)] font-bold"
+                            data-i18n="proj-pong-cat">Study Project</span>
+                        <h3
+                            class="text-2xl font-bold text-white mt-1 group-hover:text-[var(--accent)] transition-colors">
+                            Pong StudyProject</h3>
+                    </div>
+                    <div class="text-[var(--text-dim)] group-hover:text-white transition-colors"><i
+                            data-lucide="external-link" class="w-5 h-5"></i></div>
+                </div>
+                <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="proj-pong-desc">Classic
+                    arcade game recreation to study Unity physics and input systems.</p>
+
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="pill">Unity</span>
+                    <span class="pill">C#</span>
+                    <span class="pill">Study</span>
+                </div>
+                <div class="mt-6 inline-flex items-center gap-2 text-sm text-[var(--accent)] group-hover:text-white transition-colors font-medium"
+                    data-i18n="project-btn-details">
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i> View Details
+                </div>
+            </div>
+        </a>
+
+        <!-- Project: Shooting Zombies -->
+        <!-- Project: Shooting Zombies -->
+        <a href="games/shooting-zombies.html"
+            class="card project-card col-span-4 md:col-span-2 p-0 group reveal delay-300 block"
+            data-skills="unity,csharp,scripting">
+            <div class="img-placeholder">
+                <img src="images/games/shooting.png" alt="Shooting Zombies StudyProject"
+                    class="w-full h-full object-cover">
+            </div>
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-[var(--accent)] font-bold"
+                            data-i18n="proj-sz-cat">Study Project</span>
+                        <h3
+                            class="text-2xl font-bold text-white mt-1 group-hover:text-[var(--accent)] transition-colors">
+                            Shooting Zombies</h3>
+                    </div>
+                    <div class="text-[var(--text-dim)] group-hover:text-white transition-colors"><i
+                            data-lucide="external-link" class="w-5 h-5"></i></div>
+                </div>
+                <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="proj-sz-desc">Zombie
+                    shooting game developed to study Unity C# game design patterns.</p>
+
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="pill">Unity</span>
+                    <span class="pill">C#</span>
+                    <span class="pill">Study</span>
+                </div>
+                <div class="mt-6 inline-flex items-center gap-2 text-sm text-[var(--accent)] group-hover:text-white transition-colors font-medium"
+                    data-i18n="project-btn-details">
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i> View Details
+                </div>
+            </div>
+        </a>
 
         <!-- Itch.io CTA -->
         <div class="col-span-4 flex justify-center reveal">
@@ -673,6 +754,7 @@
     </footer>
 
     <script src="js/minigame.js"></script>
+    <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </body>
 

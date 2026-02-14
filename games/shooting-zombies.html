@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mysterious Restaurant | Vinicius Passos</title>
+    <title>Shooting Zombies StudyProject | Vinicius Passos</title>
     <meta name="description"
-        content="Mysterious Restaurant — A cozy restaurant simulation with Match3 and Merge elements.">
+        content="Shooting Zombies StudyProject — A shooting game developed to study Unity C# game design patterns.">
     <link rel="icon" type="image/png" href="../images/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,27 +50,32 @@
         </div>
 
         <!-- Hero Card -->
-        <div class="card col-span-4 p-0 reveal">
-            <div class="game-video-wrapper">
-                <iframe src="https://www.youtube.com/embed/6skpt-OXNhY" title="Mysterious Restaurant: Game reveal!"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="card col-span-4 p-0 reveal no-tilt">
+            <!-- Embed -->
+            <div class="w-full bg-black flex items-center justify-center overflow-hidden relative"
+                style="aspect-ratio: 1280/740;">
+                <iframe frameborder="0" src="https://itch.io/embed-upload/6896705?color=000309" allowfullscreen=""
+                    width="100%" height="100%" style="transform: translate(-50%, -50%) scale(0.9);"
+                    class="absolute top-1/2 left-1/2 origin-center">
+                    <a href="https://vxnx.itch.io/zumbi-test">Play Zombie Shooting Game only for Study purpose on
+                        itch.io</a>
+                </iframe>
             </div>
             <div class="p-8 md:p-10">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
                     <div>
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="pill" data-i18n="platform-mobile">Mobile</span>
+                            <span class="pill" data-i18n="platform-desktop">Desktop</span>
                             <span class="pill" style="border-color: rgba(16,185,129,0.3); color: #10b981;"
                                 data-i18n="status-released">Released</span>
                         </div>
-                        <h1 class="text-4xl md:text-5xl font-bold text-gradient tracking-tighter">Mysterious Restaurant
-                        </h1>
+                        <h1 class="text-4xl md:text-5xl font-bold text-gradient tracking-tighter">Shooting Zombies
+                            StudyProject</h1>
+                        <div class="flex items-center gap-2 mt-3 text-sm text-[var(--text-dim)] font-mono">
+                            <i data-lucide="maximize" class="w-4 h-4"></i>
+                            <span data-i18n="note-fullscreen">Recommended: Play in Full Screen</span>
+                        </div>
                     </div>
-                    <a href="https://apkpure.com/br/mysterious-restaurant-match-3/com.ocarina.triviawordrestaurant/download/1.0.0.28"
-                        target="_blank" rel="noopener noreferrer" class="play-btn" data-i18n="play-btn-play">
-                        <i data-lucide="play" class="w-5 h-5"></i> Play Game
-                    </a>
                 </div>
             </div>
         </div>
@@ -79,8 +84,8 @@
         <div class="card col-span-4 md:col-span-3 p-8 reveal delay-100">
             <div class="game-section">
                 <h2 data-i18n="game-about-title">About the Game</h2>
-                <p data-i18n="mr-about-desc">Inherit a timeless restaurant, and connect with your customers through
-                    unique challenges. A restaurant simulation game with match-3 and merge mechanics.</p>
+                <p data-i18n="sz-about-desc">A shooting game created to understand game design principles in Unity and
+                    C#.</p>
             </div>
         </div>
 
@@ -89,22 +94,7 @@
             <div class="game-section">
                 <h2 data-i18n="role-title">My Role</h2>
                 <ul>
-                    <li data-i18n="role-gd">Game Designer</li>
                     <li data-i18n="role-unity">Unity Developer</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Responsibilities -->
-        <div class="card col-span-4 md:col-span-2 p-8 reveal delay-100">
-            <div class="game-section">
-                <h2 data-i18n="resp-title">Responsibilities</h2>
-                <ul>
-                    <li data-i18n="mr-resp-1">Designed the game and onboarding</li>
-                    <li data-i18n="mr-resp-2">Implemented game systems and UI in Unity</li>
-                    <li data-i18n="mr-resp-3">Maintained documentation</li>
-                    <li data-i18n="mr-resp-4">Playtested and iterated based on feedback</li>
-                    <li data-i18n="mr-resp-5">Tracked analytics data</li>
                 </ul>
             </div>
         </div>
@@ -114,29 +104,8 @@
             <div class="game-section">
                 <h2 data-i18n="tech-title">Technologies Used</h2>
                 <ul>
-                    <li data-i18n="mr-tech-1">Unity Engine</li>
-                    <li data-i18n="mr-tech-2">C#</li>
-                    <li data-i18n="mr-tech-3">Figma (for UI/UX)</li>
-                    <li data-i18n="mr-tech-4">Firebase</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Development Journey -->
-        <div class="card col-span-4 md:col-span-2 p-8 reveal delay-200">
-            <div class="game-section">
-                <h2 data-i18n="journey-title">Development Journey</h2>
-                <p class="mb-4" data-i18n="mr-journey-p">This project originally began as a trivia-based restaurant
-                    game. However, we
-                    later pivoted to a match-3 gameplay style to better support the restaurant theme and improve
-                    engagement.</p>
-                <ul class="space-y-3">
-                    <li data-i18n="mr-journey-1">Integrating trivia into a restaurant setting was difficult. The pivot
-                        to match-3 and merge mechanics allowed for a more natural and engaging gameplay loop.</li>
-                    <li data-i18n="mr-journey-2">Learned the importance of adapting design based on player feedback and
-                        analytics, and how to blend different genres for a unique experience.</li>
-                    <li data-i18n="mr-journey-3">Developed a day/night cycle system and dynamic customer behaviors to
-                        keep gameplay fresh and replayable.</li>
+                    <li data-i18n="sz-tech-1">Unity Engine</li>
+                    <li data-i18n="sz-tech-2">C#</li>
                 </ul>
             </div>
         </div>
@@ -146,13 +115,15 @@
             <div class="game-section">
                 <h2 data-i18n="challenges-title">Key Challenges</h2>
                 <ul class="list-disc pl-5 space-y-2 text-[var(--text-muted)] text-sm">
-                    <li data-i18n="mr-challenge-1">Pivot from trivia to Match-3/Merge mechanics mid-development to
-                        better fit the theme.</li>
-                    <li data-i18n="mr-challenge-2">Balancing the economy between the puzzle core and restaurant
-                        decoration meta-game.</li>
+                    <li data-i18n="sz-challenge-1">Managing performance with multiple enemies on screen using Object
+                        Pooling.</li>
+                    <li data-i18n="sz-challenge-2">Implementing AI state machines for zombie behavior (Idle, Chase,
+                        Attack).</li>
                 </ul>
             </div>
         </div>
+
+
 
     </div>
 

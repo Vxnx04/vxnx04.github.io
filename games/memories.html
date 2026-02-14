@@ -124,14 +124,15 @@
             </div>
         </div>
 
-        <!-- Journey -->
-        <div class="card col-span-4 p-8 reveal">
+        <!-- Development Journey -->
+        <div class="card col-span-4 md:col-span-2 p-8 reveal">
             <div class="game-section">
                 <h2 data-i18n="journey-title">Development Journey</h2>
-                <p data-i18n="mem-journey-p"><em>Memories of a Scattered Mind</em> was my first 3D project in Unity — a
+                <p class="mb-4" data-i18n="mem-journey-p"><em>Memories of a Scattered Mind</em> was my first 3D project
+                    in Unity — a
                     psychological horror experience focused on storytelling and atmosphere over traditional jump scares.
                 </p>
-                <ul class="mt-4">
+                <ul class="space-y-3">
                     <li data-i18n="mem-journey-1">Maintaining tension and dread without jump scares required careful
                         level design, pacing, and audio work. We focused on environmental storytelling and subtle cues
                         to immerse players in William's fractured mind.</li>
@@ -143,12 +144,27 @@
             </div>
         </div>
 
+        <!-- Key Challenges -->
+        <div class="card col-span-4 md:col-span-2 p-8 reveal delay-300">
+            <div class="game-section">
+                <h2 data-i18n="challenges-title">Key Challenges</h2>
+                <ul class="list-disc pl-5 space-y-2 text-[var(--text-muted)] text-sm">
+                    <li data-i18n="mem-challenge-1">Designing audio-driven horror cues without visual dependency.</li>
+                    <li data-i18n="mem-challenge-2">Optimizing lighting and post-processing for low-end hardware without
+                        losing atmosphere.</li>
+                </ul>
+            </div>
+        </div>
+
+
+
     </div>
 
     <footer class="text-center text-xs text-[var(--text-dim)] pb-8 font-mono">
         © <span id="year"></span> Vinicius Passos // <span data-i18n="footer-credit">Designed & Built by VXNX</span>
     </footer>
 
+    <script src="../js/translations.js"></script>
     <script src="../js/main.js"></script>
 </body>
 

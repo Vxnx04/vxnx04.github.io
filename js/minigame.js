@@ -438,8 +438,21 @@ document.addEventListener('DOMContentLoaded', () => {
             btnReset.innerText = t.btnProjects;
             btnReset.onclick = () => {
                 modal.classList.add('hidden');
+
+                // Show Crown State
+                const crownState = document.getElementById('rpg-crown-state');
+                const gameContainer = document.getElementById('minigame-container');
+                if (crownState) {
+                    crownState.classList.remove('hidden');
+                    // Ensure the game container is still taking up space but maybe "frozen" or obscured
+                    // actually the crown state is absolute over it, so it should cover it.
+                }
+
                 const workSection = document.getElementById('work');
                 if (workSection) workSection.scrollIntoView({ behavior: 'smooth' });
+
+                // Persist win state?
+                localStorage.setItem('rpg_completed', 'true');
             };
         } else {
             btnReset.innerText = t.newRun;
