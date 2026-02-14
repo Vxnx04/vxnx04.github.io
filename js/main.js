@@ -240,8 +240,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (key === 'btn-resume') {
                 const resumeUrls = {
-                    pt: 'https://github.com/user-attachments/files/25074221/Vinicius.PT-BR.pdf',
-                    en: 'https://github.com/user-attachments/files/25074220/Vinicius.EN.pdf'
+                    pt: 'assets/documents/Vinicius.Game.Designer.PT.pdf',
+                    en: 'assets/documents/Vinicius.Game.Designer.EN.pdf'
                 };
                 const link = el.closest('a.resume-link');
                 if (link) link.href = resumeUrls[language] || resumeUrls.pt;
