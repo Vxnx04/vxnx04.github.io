@@ -384,3 +384,39 @@
         opacity: 0;
     }
 }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .minigame-container {
+        aspect-ratio: auto;
+        /* Allow flexible height on mobile */
+        height: auto;
+        min-height: 500px;
+        /* Ensure enough height for viewport */
+        margin: 20px 0;
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .game-controls {
+        gap: 8px;
+        /* Slightly tighter gap */
+        padding: 16px 12px;
+    }
+
+    .action-btn {
+        width: 56px;
+        /* Slightly smaller buttons */
+        height: 56px;
+    }
+
+    .entity {
+        transform: scale(0.9);
+        /* Slightly smaller entities */
+    }
+
+    .player-entity {
+        margin-right: 30px;
+        /* Reduced spacing */
+    }
+}

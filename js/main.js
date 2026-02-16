@@ -73,7 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let rafId = null;
 
         card.addEventListener('mousemove', (e) => {
-            if (rafId || card.classList.contains('no-tilt')) return;
+            // Disable tilt on mobile/tablets
+            const isTouch = !window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+            if (isTouch || rafId || card.classList.contains('no-tilt')) return;
             rafId = requestAnimationFrame(() => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
