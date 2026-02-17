@@ -46,6 +46,14 @@ const translations = {
     'exp-degree-desc1': { pt: 'Tecnólogo em Jogos Digitais.', en: 'Technologist Degree in Digital Games.' },
     'exp-degree-desc2': { pt: 'Projeto final: "Memories of a Scattered Mind" — jogo de horror psicológico explorando memória e PTSD.', en: 'Final project: "Memories of a Scattered Mind" — psychological horror game exploring memory and PTSD.' },
     'education-title': { pt: 'Educação', en: 'Education' },
+    'edu-journey-title': {
+        pt: 'Jornada <br><span class="text-[var(--text-muted)]">Acadêmica</span>',
+        en: 'Academic <br><span class="text-[var(--text-muted)]">Journey</span>'
+    },
+    'edu-journey-desc': {
+        pt: 'Minha trajetória acadêmica combina expertise técnica em desenvolvimento de jogos com estudos avançados em liderança e ciência cognitiva.',
+        en: 'My academic path combines technical expertise in game development with advanced studies in leadership and cognitive science.'
+    },
     'edu-mba-title': { pt: 'MBA Game Design', en: 'MBA Game Design' },
     'edu-mba-desc-short': {
         pt: 'Especialização em liderança, inovação e tecnologias emergentes (VR/AR, IA) para jogos.',
@@ -293,6 +301,29 @@ const translations = {
     'sz-challenge-2': {
         pt: 'Implementar máquinas de estado de IA para comportamento zumbi (Ocioso, Perseguir, Atacar).',
         en: 'Implementing AI state machines for zombie behavior (Idle, Chase, Attack).'
+    },
+
+    /* Testimonials */
+    'testimonials-title': { pt: 'Recomendações', en: 'Testimonials' },
+    'test-elisa-role': { pt: 'Concept Artist | Ocarina Studios', en: 'Concept Artist | Ocarina Studios' },
+    'test-elisa-text': {
+        pt: '"Trabalhei com o Vinicius na Ocarina Studios... Vinicius sempre teve sugestões criativas que entrelaçavam arte, funcionalidade e estrutura de desenvolvimento... Recomendo o Vinicius porque é um profissional excepcional, com ideias muito valiosas."',
+        en: '"I worked with Vinicius at Ocarina Studios... Vinicius always had creative suggestions that intertwined art, functionality and development structure... I recommend Vinicius because he\'s a exceptional professional, with very valuable ideas."'
+    },
+    'test-matheus-role': { pt: 'Unity Developer | Ocarina Studios', en: 'Unity Developer | Ocarina Studios' },
+    'test-matheus-text': {
+        pt: '"Tive a chance de trabalhar com o Vini durante o desenvolvimento de Mysterious Restaurant... Vini foi responsável por fornecer um roadmap sólido, planejamento detalhado de tarefas... Recomendo ele fortemente para qualquer equipe."',
+        en: '"I had the chance to work with Vini during the development of Mysterious Restaurant... Vini was responsible for providing a solid roadmap, detailed task planning... I highly recommend him to any team."'
+    },
+    'test-gregory-role': { pt: 'Game Developer | Ocarina Studios', en: 'Game Developer | Ocarina Studios' },
+    'test-gregory-text': {
+        pt: '"Vinícius é um Game Designer excepcional, focado na retenção de jogadores e experiência do usuário. Sempre proativo na realização de pesquisas e criação de documentação estruturada... Um profissional estratégico com visão de produto."',
+        en: '"Vinícius is an exceptional Game Designer, focused on player retention and user experience. Always proactive in conducting research and creating structured documentation... A strategic professional with a product vision."'
+    },
+    'test-ricardo-role': { pt: 'Unity Developer | Ocarina Studios', en: 'Unity Developer | Ocarina Studios' },
+    'test-ricardo-text': {
+        pt: '"Tive o prazer de trabalhar com Vinicius na Ocarina Studios... Vinicius é incrivelmente proativo e adaptável, sempre trazendo uma atitude positiva para a resolução de problemas... Sem dúvida, Vinicius é um game designer incrível."',
+        en: '"I had the pleasure of working with Vinicius at Ocarina Studios... Vinicius is incredibly proactive and adaptable, always bringing a positive attitude to problem-solving... Without a doubt, Vinicius is an awesome game designer."'
     },
 
 };

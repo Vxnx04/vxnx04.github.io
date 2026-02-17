@@ -95,38 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Skill Filtering
-    const skillPills = document.querySelectorAll('.skill-pill');
-    const projectCards = document.querySelectorAll('.project-card');
-    let activeSkill = null;
 
-    skillPills.forEach(pill => {
-        pill.addEventListener('click', () => {
-            const skill = pill.dataset.skill;
-
-            if (activeSkill === skill) {
-                activeSkill = null;
-                skillPills.forEach(p => p.classList.remove('active'));
-                projectCards.forEach(c => c.classList.remove('dimmed', 'highlighted'));
-                return;
-            }
-
-            activeSkill = skill;
-            skillPills.forEach(p => p.classList.remove('active'));
-            pill.classList.add('active');
-
-            projectCards.forEach(card => {
-                const skills = (card.dataset.skills || '').split(',');
-                if (skills.includes(skill)) {
-                    card.classList.remove('dimmed');
-                    card.classList.add('highlighted');
-                } else {
-                    card.classList.remove('highlighted');
-                    card.classList.add('dimmed');
-                }
-            });
-        });
-    });
 
     // Custom Cursor
     const cursorDot = document.getElementById('cursor-dot');
