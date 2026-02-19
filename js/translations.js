@@ -30,7 +30,7 @@ const translations = {
     'experience-title': { pt: 'Experiência', en: 'Experience' },
     'exp-ocarina-company': { pt: 'Ocarina Studios', en: 'Ocarina Studios' },
     'exp-ocarina-role': { pt: 'Game Designer Jr. & Developer', en: 'Game Designer Jr. & Developer' },
-    'exp-ocarina-date': { pt: '2023 — 2025', en: '2023 — 2025' },
+    'exp-ocarina-date': { pt: 'Maio 2023 — Abril 2025', en: 'May 2023 — April 2025' },
     'exp-ocarina-b1': { pt: 'Criação e desenvolvimento de jogos mobile com retenção D1 de até 40%.', en: 'Designed and developed mobile games reaching up to 40% D1 retention.' },
     'exp-ocarina-b2': { pt: 'Liderança de sistemas de gameplay e implementação de UI/UX em Unity.', en: 'Led gameplay systems and UI/UX implementation in Unity.' },
     'exp-ocarina-b3': { pt: 'Gestão de projeto e liderança de equipe multidisciplinar (5 pessoas).', en: 'Project management and leadership of a 5-person multidisciplinary team.' },
